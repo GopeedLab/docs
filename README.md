@@ -1,6 +1,6 @@
 ## Access
 
-[https://doc.gopeed.com](https://doc.gopeed.com)
+[https://docs.gopeed.com](https://docs.gopeed.com)
 
 ## Getting Started
 
