@@ -1,6 +1,6 @@
 # API 对接
 
-Gopeed 对外提供了 HTTP API 接口，可以通过 API 进行下载管理，查看 [API 文档](/api)。
+Gopeed 对外提供了 HTTP API 接口，可以通过 API 进行下载管理，查看 [API 文档](api)。
 
 ## 启用接口
 

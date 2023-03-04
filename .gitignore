@@ -132,3 +132,5 @@ dist
 # vuepress
 .temp
 .cache
+
+.vercel
