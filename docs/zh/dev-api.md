@@ -1,6 +1,6 @@
 # API 对接
 
-Gopeed 对外提供了 HTTP API 接口，可以通过 API 进行下载管理，查看 [API 文档](api)。
+Gopeed 对外提供了 HTTP API 接口，可以通过 API 进行下载管理。
 
 ## 启用接口
 
@@ -13,3 +13,7 @@ Gopeed 对外提供了 HTTP API 接口，可以通过 API 进行下载管理，�
 ![](/develop/set-token.png)
 
 > 注：以上设置需要重启后生效。
+
+## 接口文档
+
+接下来就可以根据 [接口文档](api.html) 尽情发挥了。
