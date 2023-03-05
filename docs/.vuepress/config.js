@@ -20,6 +20,11 @@ export default defineUserConfig({
   },
   theme: defaultTheme({
     logo: "/logo.png",
+    editLink: true,
+    repo: "GopeedLab/docs",
+    docsDir: "docs",
+    docsBranch: "main",
+    editLinkText: "Edit this page on GitHub",
     locales: {
       "/": {
         selectLanguageName: "English",
