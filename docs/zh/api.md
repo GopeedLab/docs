@@ -17,12 +17,13 @@ Gopeed 提供了一套 RESTful API，用于与下载器进行交互，开发者�
 
 ```json
 {
+    "code": 0,
     "msg": "",
     "data": data
 }
 ```
 
-当接口请求成功时，HTTP 状态码为 `200`，`msg` 字段为空，`data` 字段为接口返回的数据，失败情况下，HTTP 状态码为非 200，`msg` 字段为错误信息，`data` 字段为空。
+当接口请求成功时`code` 为 0，其它状态码请参考 [错误码](#错误码)。
 
 ## 接口列表
 
@@ -42,6 +43,7 @@ Content-Type: application/json
 
 ###
 {
+  "code": 0,
   "msg": "",
   "data": {
     "id": "t72df25k-n7JwF4Nvmfsx",
@@ -93,6 +95,7 @@ Content-Type: application/json
 
 ---
 {
+  "code": 0,
   "msg": "",
   "data: "UW-9cd739DwHmdncYoGUn"
 }
@@ -121,6 +124,7 @@ Content-Type: application/json
 
 ---
 {
+  "code": 0,
   "msg": "",
   "data": null
 }
@@ -142,6 +146,7 @@ Content-Type: application/json
 
 ---
 {
+  "code": 0,
   "msg": "",
   "data": null
 }
@@ -163,6 +168,7 @@ Content-Type: application/json
 
 ---
 {
+  "code": 0,
   "msg": "",
   "data": null
 }
@@ -185,44 +191,48 @@ Content-Type: application/json
 
 ---
 {
-  "id": "UW-9cd739DwHmdncYoGUn",
-  "meta": {
-    "req": {
-      "url": "https://github.com/GopeedLab/gopeed/releases/download/v1.2.3/Gopeed-v1.2.3-android.apk",
-      "extra": null
-    },
-    "res": {
-      "name": "Gopeed-v1.2.3-android.apk",
-      "size": 43385948,
-      "range": true,
-      "rootDir": "",
-      "files": [
-        {
-          "name": "Gopeed-v1.2.3-android.apk",
-          "path": "",
-          "size": 43385948
+  "code": 0,
+  "msg": "",
+  "data": {
+    "id": "UW-9cd739DwHmdncYoGUn",
+    "meta": {
+      "req": {
+        "url": "https://github.com/GopeedLab/gopeed/releases/download/v1.2.3/Gopeed-v1.2.3-android.apk",
+        "extra": null
+      },
+      "res": {
+        "name": "Gopeed-v1.2.3-android.apk",
+        "size": 43385948,
+        "range": true,
+        "rootDir": "",
+        "files": [
+          {
+            "name": "Gopeed-v1.2.3-android.apk",
+            "path": "",
+            "size": 43385948
+          }
+        ],
+      },
+      "opts": {
+        "name": "Gopeed-v1.2.3-android.apk",
+        "path": "./",
+        "selectFiles": [0],
+        "extra": {
+          "connections": 16
         }
-      ],
-      "hash": ""
-    },
-    "opts": {
-      "name": "Gopeed-v1.2.3-android.apk",
-      "path": "./",
-      "selectFiles": [0],
-      "extra": {
-        "connections": 16
       }
-    }
-  },
-  "status": "done",
-  "progress": {
-    "used": 12886185300,
-    "speed": 3615495,
-    "downloaded": 43385948
-  },
-  "size": 43385948,
-  "createdAt": "2023-03-04T19:11:01.8468886+08:00"
+    },
+    "status": "done",
+    "progress": {
+      "used": 12886185300,
+      "speed": 3615495,
+      "downloaded": 43385948
+    },
+    "size": 43385948,
+    "createdAt": "2023-03-04T19:11:01.8468886+08:00"
+  }
 }
+
 ```
 
 - 请求参数：
@@ -244,47 +254,50 @@ GET /api/v1/tasks?status=error,done
 Content-Type: application/json
 
 ---
-[
-  {
-    "id": "UW-9cd739DwHmdncYoGUn",
-    "meta": {
-      "req": {
-        "url": "https://github.com/GopeedLab/gopeed/releases/download/v1.2.3/Gopeed-v1.2.3-android.apk",
-        "extra": null
-      },
-      "res": {
-        "name": "Gopeed-v1.2.3-android.apk",
-        "size": 43385948,
-        "range": true,
-        "rootDir": "",
-        "files": [
-          {
-            "name": "Gopeed-v1.2.3-android.apk",
-            "path": "",
-            "size": 43385948
+{
+  "code": 0,
+  "msg": "",
+  "data": [
+    {
+      "id": "UW-9cd739DwHmdncYoGUn",
+      "meta": {
+        "req": {
+          "url": "https://github.com/GopeedLab/gopeed/releases/download/v1.2.3/Gopeed-v1.2.3-android.apk",
+          "extra": null
+        },
+        "res": {
+          "name": "Gopeed-v1.2.3-android.apk",
+          "size": 43385948,
+          "range": true,
+          "rootDir": "",
+          "files": [
+            {
+              "name": "Gopeed-v1.2.3-android.apk",
+              "path": "",
+              "size": 43385948
+            }
+          ],
+        },
+        "opts": {
+          "name": "Gopeed-v1.2.3-android.apk",
+          "path": "./",
+          "selectFiles": [0],
+          "extra": {
+            "connections": 16
           }
-        ],
-        "hash": ""
-      },
-      "opts": {
-        "name": "Gopeed-v1.2.3-android.apk",
-        "path": "./",
-        "selectFiles": [0],
-        "extra": {
-          "connections": 16
         }
-      }
-    },
-    "status": "done",
-    "progress": {
-      "used": 12886185300,
-      "speed": 3615495,
-      "downloaded": 43385948
-    },
-    "size": 43385948,
-    "createdAt": "2023-03-04T19:11:01.8468886+08:00"
-  }
-]
+      },
+      "status": "done",
+      "progress": {
+        "used": 12886185300,
+        "speed": 3615495,
+        "downloaded": 43385948
+      },
+      "size": 43385948,
+      "createdAt": "2023-03-04T19:11:01.8468886+08:00"
+    }
+  ]
+}
 ```
 
 - 请求参数：
@@ -449,7 +462,6 @@ Content-Type: application/json
           "size": 43385948
         }
       ],
-      "hash": ""
     },
     "opts": {
       "name": "Gopeed-v1.2.3-android.apk",
@@ -503,7 +515,6 @@ Content-Type: application/json
         "size": 43385948
       }
     ],
-    "hash": ""
   },
   "opts": {
     "name": "Gopeed-v1.2.3-android.apk",
@@ -523,3 +534,13 @@ Content-Type: application/json
 | req    | object | [请求对象](#请求对象) |      |
 | res    | object | [资源对象](#资源对象) |      |
 | opts   | object | [任务选项](#任务选项) |      |
+
+## 错误码
+
+| 错误码 | 说明           |
+| ------ | -------------- |
+| 0      | 成功           |
+| 1000   | 服务器异常     |
+| 1001   | 鉴权不通过     |
+| 1002   | 请求参数不合法 |
+| 2001   | 任务不存在     |

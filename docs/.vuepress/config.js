@@ -1,5 +1,6 @@
 import { defineUserConfig, defaultTheme } from "vuepress";
 import markdownItTaskLists from "markdown-it-task-lists";
+import { copyCodePlugin } from "vuepress-plugin-copy-code2";
 
 export default defineUserConfig({
   lang: "en-US",
@@ -24,14 +25,14 @@ export default defineUserConfig({
         selectLanguageName: "English",
         navbar: [
           {
-            text: "Guide",
+            text: "Develop Guide",
             link: "/",
           },
         ],
         sidebar: {
           "/": [
             {
-              text: "Guide",
+              text: "API Reference",
               children: ["/index.md", "/develop.md"],
             },
           ],
@@ -41,7 +42,7 @@ export default defineUserConfig({
         selectLanguageName: "中文（简体）",
         navbar: [
           {
-            text: "指南",
+            text: "开发指南",
             link: "/zh/",
           },
           {
@@ -52,7 +53,7 @@ export default defineUserConfig({
         sidebar: {
           "/zh/": [
             {
-              text: "指南",
+              text: "开发指南",
               children: [
                 "/zh/index.md",
                 "/zh/dev-api.md",
@@ -70,6 +71,7 @@ export default defineUserConfig({
       },
     },
   }),
+  plugins: [[copyCodePlugin()]],
   extendsMarkdown: (md) => {
     md.use(markdownItTaskLists);
   },
