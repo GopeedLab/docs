@@ -9,7 +9,6 @@ Gopeed 提供了一套 RESTful API，用于与下载器进行交互，开发者�
 | 参数名       | 方式   | 类型   | 说明                                        |
 | ------------ | ------ | ------ | ------------------------------------------- |
 | X-Api-Token  | header | string | 在 API 开启访问令牌的情况下，需要传递此参数 |
-| Content-Type | header | string | 固定为 application/json                     |
 
 ## 响应报文
 
