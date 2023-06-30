@@ -40,7 +40,7 @@ Content-Type: application/json
   "url": "https://github.com/GopeedLab/gopeed/releases/download/v1.2.3/Gopeed-v1.2.3-android.apk"
 }
 
-###
+---
 {
   "code": 0,
   "msg": "",

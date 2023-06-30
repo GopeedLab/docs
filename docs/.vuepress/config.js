@@ -6,6 +6,29 @@ export default defineUserConfig({
   lang: "en-US",
   title: "Gopeed",
   description: "Gopeed docs website",
+  head: [
+    [
+      "script",
+      { type: "module", defer: true },
+      `
+    import { initializeApp } from "/js/firebase-app_9.23.0.js";
+    import { getAnalytics } from "/js/firebase-analytics_9.23.0.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBG1Jyk-3J5lgSXAmmjyQjCnxTLQS5e-VU",
+      authDomain: "gopeed-4de76.firebaseapp.com",
+      projectId: "gopeed-4de76",
+      storageBucket: "gopeed-4de76.appspot.com",
+      messagingSenderId: "742279468136",
+      appId: "1:742279468136:web:f21afb9ea70cdca2c897dd",
+      measurementId: "G-6F2570B28S"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    getAnalytics(app);
+    `,
+    ],
+  ],
   locales: {
     "/": {
       lang: "en-US",
@@ -33,12 +56,22 @@ export default defineUserConfig({
             text: "Develop Guide",
             link: "/",
           },
+          {
+            text: "API Reference",
+            link: "/zh/api.md",
+          },
         ],
         sidebar: {
           "/": [
             {
+              text: "Develop Guide",
+              children: ["/index.md", "/dev-api.md", "/dev-extension.md"],
+            },
+          ],
+          "/api.html": [
+            {
               text: "API Reference",
-              children: ["/index.md", "/develop.md"],
+              children: ["/zh/api.md"],
             },
           ],
         },
