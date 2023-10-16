@@ -5,6 +5,6 @@
 ## Getting Started
 
 ```
-npm install
-npm run dev
+pnpm install
+pnpm run docs:dev
 ```

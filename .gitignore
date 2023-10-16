@@ -133,4 +133,12 @@ dist
 .temp
 .cache
 
+# vitepress
+.vitepress/cache
+
 .vercel
+.gopeed-js
+swagger.json
+docs/public/site/openapi/swagger.json
+docs/public/site/reference/*
+!docs/public/site/reference/.gitkeep
