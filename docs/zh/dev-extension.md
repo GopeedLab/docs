@@ -281,7 +281,7 @@ gopeed.events.onResolve((ctx) => {
 });
 ```
 
-> 注：详细的 API 可以参考[文档](https://docs.gopeed.com/site/reference/classes/gopeed.types.Storage.html)。
+> 注：详细的 API 可以参考[文档](https://docs.gopeed.com/site/reference/interfaces/gopeed.types.Storage.html)。
 
 ## 扩展调试
 

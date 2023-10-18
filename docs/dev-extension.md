@@ -299,7 +299,7 @@ gopeed.events.onResolve((ctx) => {
 });
 ```
 
-> Note: For detailed API, please refer to [documentation](https://docs.gopeed.com/site/reference/classes/gopeed.types.Storage.html).
+> Note: For detailed API, please refer to [documentation](https://docs.gopeed.com/site/reference/interfaces/gopeed.types.Storage.html).
 
 ## Extension debugging
 
