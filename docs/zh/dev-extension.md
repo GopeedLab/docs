@@ -263,6 +263,26 @@ gopeed.events.onResolve((ctx) => {
 });
 ```
 
+## 扩展存储
+
+Gopeed 提供了一个简单的存储 API，可以让扩展持久化存储一些数据，例如`授权token`等等，示例：
+
+```js
+gopeed.events.onResolve((ctx) => {
+  // Get the token, if it not exists, then login
+  const token = ctx.storage.get("token");
+  if(!token){
+    const token = await login();
+    ctx.storage.set("token",token)
+  }
+
+  // Then do something with the token
+  // ...
+});
+```
+
+> 注：详细的 API 可以参考[文档](https://docs.gopeed.com/site/reference/classes/gopeed.types.Storage.html)。
+
 ## 扩展调试
 
 在脚本中可以通过`gopeed.logger`对象进行日志输出，支持`debug`、`info`、`warn`、`error`三种级别，示例：

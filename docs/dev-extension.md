@@ -281,6 +281,26 @@ gopeed.events.onResolve((ctx) => {
 });
 ```
 
+## Extension storage
+
+Gopeed provides a simple storage API that allows extensions to persistently store some data, such as `authorization token`, etc., for example:
+
+```js
+gopeed.events.onResolve((ctx) => {
+  // Get the token, if it not exists, then login
+  const token = ctx.storage.get("token");
+  if(!token){
+    const token = await login();
+    ctx.storage.set("token",token)
+  }
+
+  // Then do something with the token
+  // ...
+});
+```
+
+> Note: For detailed API, please refer to [documentation](https://docs.gopeed.com/site/reference/classes/gopeed.types.Storage.html).
+
 ## Extension debugging
 
 In the script, you can output logs through the `gopeed.logger` object, which supports three levels: `debug`, `info`, `warn`, `error`, for example:
