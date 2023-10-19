@@ -92,7 +92,9 @@ First, let's take a look at the `manifest.json` file, which is the manifest file
   "scripts": [
     {
       "event": "onResolve",
-      "matches": ["*://github.com/*"],
+      "match": {
+        "urls": ["*://github.com/*"]
+      },
       "entry": "dist/index.js"
     }
   ],
@@ -130,7 +132,7 @@ Next, let's introduce the meaning of each field one by one:
 
 - `scripts`: `Pay attention!` This is the configuration of the Gopeed extension activation event.
 
-  The `onResolve` event configured in the sample project will be triggered when parsing tasks. The `matches` field is used to match the URL created by the task. If the match is successful, the script file specified in the `entry` field will be executed. In the example of the scaffolding project above, it is configured to match `*://github.com/*` and then run the `dist/index.js` file. Therefore, when we enter a `https://github.com/hello` link, it is matched and then triggers the execution of the extension script. The content of the script will be explained in detail later.
+  The `onResolve` event configured in the sample project will be triggered when parsing tasks. The `match.urls` field is used to match the URL created by the task. If the match is successful, the script file specified in the `entry` field will be executed. In the example of the scaffolding project above, it is configured to match `*://github.com/*` and then run the `dist/index.js` file. Therefore, when we enter a `https://github.com/hello` link, it is matched and then triggers the execution of the extension script. The content of the script will be explained in detail later.
 
   > The matching rules are consistent with the matching rules of Chrome extensions, which can be referred to [here](https://developer.chrome.com/docs/extensions/mv3/match_patterns/)
   >
@@ -270,28 +272,28 @@ Cookie is an input box, and `quality` is a drop-down box. It should be noted tha
 
 If the `options` option is configured, it will be rendered as a drop-down box for users to choose.
 
-Then you can get the value of the setting through `ctx.settings` in the extension script, for example:
+Then you can get the value of the setting through `gopeed.settings` in the extension script, for example:
 
 ```js
 gopeed.events.onResolve((ctx) => {
   // Access cookie setting
-  console.log(ctx.settings.cookie);
+  console.log(gopeed.settings.cookie);
   // Access quality setting
-  console.log(ctx.settings.quality);
+  console.log(gopeed.settings.quality);
 });
 ```
 
 ## Extension storage
 
-Gopeed provides a simple storage API that allows extensions to persistently store some data, such as `authorization token`, etc., for example:
+Gopeed provides a set of storage APIs to support extension persistence storage of data such as `login token`, for example:
 
 ```js
 gopeed.events.onResolve((ctx) => {
   // Get the token, if it not exists, then login
-  const token = ctx.storage.get("token");
+  const token = gopeed.storage.get("token");
   if(!token){
     const token = await login();
-    ctx.storage.set("token",token)
+    gopeed.storage.set("token",token)
   }
 
   // Then do something with the token

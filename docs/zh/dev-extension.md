@@ -92,7 +92,9 @@ Happy coding!
   "scripts": [
     {
       "event": "onResolve",
-      "matches": ["*://github.com/*"],
+      "match": {
+        "urls": ["*://github.com/*"]
+      },
       "entry": "dist/index.js"
     }
   ],
@@ -130,11 +132,9 @@ Happy coding!
 
 - `scripts`：`敲重点！`这里是 Gopeed 扩展激活事件的配置。
 
-  示例项目中配置的`onResolve`事件会在解析任务时触发，通过`matches`字段来匹配任务创建的 url，如果匹配成功，则会运行`entry`字段指定的脚本文件，在上面的脚手架项目示例中，配置了匹配`*://github.com/*`，然后运行`dist/index.js`文件，所以当我们输入一个`https://github.com/hello`链接时被匹配到，然后触发了扩展脚本的执行，这里先不讲脚本的内容，后面会详细介绍。
+  示例项目中配置的`onResolve`事件会在解析任务时触发，通过`match.urls`字段来匹配任务创建的 url，如果匹配成功，则会运行`entry`字段指定的脚本文件，在上面的脚手架项目示例中，配置了匹配`*://github.com/*`，然后运行`dist/index.js`文件，所以当我们输入一个`https://github.com/hello`链接时被匹配到，然后触发了扩展脚本的执行，这里先不讲脚本的内容，后面会详细介绍。
 
   > 匹配规则和 chrome 扩展的匹配规则一致，可以参考[这里](https://developer.chrome.com/docs/extensions/mv3/match_patterns/)
-  >
-  > 目前扩展只支持`onResolve`激活事件，后续会支持更多的事件。
 
 - `settings`：扩展设置项，通过配置声明可以在 Gopeed 中生成对应的设置界面，提供用户自定义设置，例如自定义`Cookie`、自定义`User-Agent`等等，示例：
 
@@ -252,28 +252,28 @@ gopeed.events.onResolve((ctx) => {
 
 如果配置了`options`选项，那么就会渲染成下拉框供用户选择。
 
-接着就是在扩展脚本中通过`ctx.settings`获取设置的值了，示例：
+接着就是在扩展脚本中通过`gopeed.settings`获取设置的值了，示例：
 
 ```js
 gopeed.events.onResolve((ctx) => {
   // 访问cooke设置项
-  console.log(ctx.settings.cookie);
+  console.log(gopeed.settings.cookie);
   // 访问quality设置项
-  console.log(ctx.settings.quality);
+  console.log(gopeed.settings.quality);
 });
 ```
 
 ## 扩展存储
 
-Gopeed 提供了一个简单的存储 API，可以让扩展持久化存储一些数据，例如`授权token`等等，示例：
+Gopeed 提供了一套存储 API，以支持扩展持久化存储数据，例如`登录token`等等，示例：
 
 ```js
 gopeed.events.onResolve((ctx) => {
   // Get the token, if it not exists, then login
-  const token = ctx.storage.get("token");
+  const token = gopeed.storage.get("token");
   if(!token){
     const token = await login();
-    ctx.storage.set("token",token)
+    gopeed.storage.set("token",token)
   }
 
   // Then do something with the token
