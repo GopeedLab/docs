@@ -34,7 +34,7 @@ In addition to basic download functions, there are many advanced features that m
 
 - **Decentralized extension**
 
-  You can write extensions through `JavaScript` scripts to enhance Gopeed's download capabilities, such as downloading videos from a website, or downloading music from a website, etc.
+  You can write extensions through `JavaScript` to enhance Gopeed's download capabilities, such as downloading videos from a website, or downloading music from a website, etc.
 
 ## Why not...?
 
