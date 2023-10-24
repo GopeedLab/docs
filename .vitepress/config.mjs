@@ -10,6 +10,7 @@ export default defineConfig({
   sitemap: {
     hostname: "https://docs.gopeed.com",
   },
+  appearance: 'dark',
   head: [
     [
       "script",
@@ -168,6 +169,13 @@ export default defineConfig({
     },
     search: {
       provider: 'local'
+    },
+    lastUpdated: {
+      text: 'Updated at',
+      formatOptions: {
+        dateStyle: 'full',
+        timeStyle: 'medium'
+      }
     }
   },
   markdown: {
