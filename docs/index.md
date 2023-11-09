@@ -9,7 +9,7 @@ Gopeed (full name Go Speed) is a high-speed downloader developed by `Golang` + `
 - [x] **iOS**
 - [x] **Web**
 - [x] **Docker**
-- [x] **Command Line**
+- [x] **Command Tool**
 
 ## Features
 
