@@ -17,9 +17,9 @@ Gopeed（全称 Go Speed），直译过来中文名叫做`够快下载器`（不
 
 ### 基本功能
 
-- HTTP + HTTPS 多协程下载
-- Torrent 种子下载
-- Magnet 协议下载
+- HTTP & HTTPS 多协程下载
+- Torrent & Magnet 下载
+- 每日自动更新 tracker 列表
 - Seed, DHT, PEX, uTP, Webtorrent, Upnp
 - 国际化
 - 暗黑主题
