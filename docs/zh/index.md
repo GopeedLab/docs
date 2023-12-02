@@ -1,6 +1,6 @@
 # 介绍
 
-Gopeed（全称 Go Speed），是一款由 `Golang` + `Flutter` 开发的高速下载器，支持（HTTP、BitTorrent、Magnet）协议下载，并且支持所有平台使用，支持的平台有：
+Gopeed（全称 Go Speed），直译过来中文名叫做`够快下载器`（不是狗屁下载器！），是一款由 `Golang` + `Flutter` 开发的高速下载器，支持（HTTP、BitTorrent、Magnet）协议下载，并且支持所有平台使用，支持的平台有：
 
 - [x] **Windows**
 - [x] **Macos**
