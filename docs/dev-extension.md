@@ -193,8 +193,6 @@ Another thing to note is that goja natively supports most of the `es6+` syntax, 
 When an event is triggered, the script file specified in the `entry` field will be executed. The script file in the sample project is as follows:
 
 ```js
-import gopeed from "gopeed";
-
 gopeed.events.onResolve((ctx) => {
   ctx.res = {
     name: "example",
@@ -212,7 +210,6 @@ gopeed.events.onResolve((ctx) => {
 
 Next, let's introduce the meaning of each field one by one:
 
-- `import gopeed from "gopeed"`: Here, the `gopeed` object is imported, but it should be noted that `gopeed` is a built-in global variable. The import here is just for type prompts, and it is also okay not to import.
 - `gopeed.events.onResolve`: Here, the `onResolve` event is registered, and the method inside is the specific logic of the extension.
 - `ctx`: Event context, which contains some information about the current event. In the `onResolve` event, `ctx` contains the following fields:
   - `req`: Request information, including the url and headers of the resource.

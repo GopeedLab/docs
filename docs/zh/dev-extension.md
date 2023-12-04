@@ -173,8 +173,6 @@ Gopeed 扩展脚本引擎是由[goja](https://github.com/dop251/goja)来实现�
 每当事件触发时，会运行`entry`字段指定的脚本文件，示例项目中的脚本文件如下：
 
 ```js
-import gopeed from "gopeed";
-
 gopeed.events.onResolve((ctx) => {
   ctx.res = {
     name: "example",
@@ -192,7 +190,6 @@ gopeed.events.onResolve((ctx) => {
 
 接下来，我们逐一介绍一下脚本的内容：
 
-- `import gopeed from "gopeed"`：这里是引入了`gopeed`对象，但是需要说明的一点是`gopeed`是内置的全局变量，这里引入只是为了类型提示，不引入也是没问题的。
 - `gopeed.events.onResolve`：这里是注册`onResolve`事件，方法里面就是扩展的具体逻辑了。
 - `ctx`：事件上下文，包含了当前事件的一些信息，在`onResolve`事件中，`ctx`包含了以下字段：
   - `req`：请求信息，包含了资源的 url、headers 等等。
