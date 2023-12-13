@@ -98,16 +98,26 @@ Usage of C:\Users\liwei\Downloads\gopeed-web-v1.3.13-windows-amd64\gopeed.exe:
 直接一行命令即可运行：
 
 ```sh
+docker run --name gopeed -d -p 9999:9999 liwei2633/gopeed
+```
+
+挂载下载目录
+
+```sh
 docker run --name gopeed -d -p 9999:9999 -v /path/to/download:/root/Downloads liwei2633/gopeed
 ```
 
-如果需要启用身份认证，可以传递命令行参数：
+挂载数据目录
 
 ```sh
-docker run --name gopeed -d -p 9999:9999 -v /path/to/download:/root/Downloads liwei2633/gopeed -u admin -p gopeed
+docker run --name gopeed -d -p 9999:9999 -v /path/to/download:/root/Downloads -v /path/to/storage:/app/storage liwei2633/gopeed
 ```
 
-> 注：记得把 `/path/to/download` 替换为你自己的宿主机下载目录。
+如果需要启用身份认证，可以传递命令行参数(参考上一节`Web 配置`)：
+
+```sh
+docker run --name gopeed -d -p 9999:9999 -v /path/to/download:/root/Downloads -v /path/to/storage:/app/storage liwei2633/gopeed -u admin -p 123456
+```
 
 ## 命令行安装
 

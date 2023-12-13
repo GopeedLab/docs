@@ -95,19 +95,29 @@ It also supports configuration through configuration files. Create a `config.jso
 
 ## Docker Installation
 
-One line of command to run:
+One line of command:
+
+```sh
+docker run --name gopeed -d -p 9999:9999 liwei2633/gopeed
+```
+
+Mount the download directory
 
 ```sh
 docker run --name gopeed -d -p 9999:9999 -v /path/to/download:/root/Downloads liwei2633/gopeed
 ```
 
-If you need to enable identity authentication, you can pass command line parameters:
+Mount the data directory
 
 ```sh
-docker run --name gopeed -d -p 9999:9999 -v /path/to/download:/root/Downloads liwei2633/gopeed -u admin -p gopeed
+docker run --name gopeed -d -p 9999:9999 -v /path/to/download:/root/Downloads -v /path/to/storage:/app/storage liwei2633/gopeed
 ```
 
-> Note: Remember to replace `/path/to/download` with your own host download directory.
+If you need to enable identity authentication, you can pass command line parameters (refer to the previous section `Web Configuration`):
+
+```sh
+docker run --name gopeed -d -p 9999:9999 -v /path/to/download:/root/Downloads -v /path/to/storage:/app/storage liwei2633/gopeed -u admin -p 123456
+```
 
 ## Command Line Installation
 
