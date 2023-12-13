@@ -138,7 +138,6 @@ Next, let's introduce the meaning of each field one by one:
   >
   > Currently, the extension only supports the `onResolve` activation event, and more events will be supported in the future.
 
-- `settings`：扩展设置项，通过配置声明可以在 Gopeed 中生成对应的设置界面，提供用户自定义设置，例如自定义`Cookie`、自定义`User-Agent`等等，示例：
 - `settings`: Extension settings, through the configuration declaration, the corresponding settings page can be generated in Gopeed to provide user-defined settings, such as custom `Cookie`, custom `User-Agent`, etc., for example:
 
   ```json
