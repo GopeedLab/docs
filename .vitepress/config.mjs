@@ -42,7 +42,7 @@ export default defineConfig({
       description: "Gopeed docs website",
       themeConfig: {
         socialLinks: [
-          { icon: "github", link: "https://github.com/GopeedLab/docs" },
+          { icon: "github", link: "https://github.com/GopeedLab/gopeed" },
           { icon: "discord", link: "https://discord.gg/ZUJqJrwCGB" },
         ],
         nav: [
@@ -104,7 +104,7 @@ export default defineConfig({
       description: "Gopeed 文档网站",
       themeConfig: {
         socialLinks: [
-          { icon: "github", link: "https://github.com/GopeedLab/docs" },
+          { icon: "github", link: "https://github.com/GopeedLab/gopeed" },
           { icon: "discord", link: "https://discord.gg/ZUJqJrwCGB" },
         ],
         nav: [
