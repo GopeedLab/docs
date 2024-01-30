@@ -3,25 +3,27 @@
 1. 前往 [官网](https://gopeed.com) 下载，会根据你的操作系统自动选择对应的版本进行下载。
 2. 前往 [GitHub](https://github.com/GopeedLab/gopeed/releases) 下载，可以自行选择对应的版本进行下载。
 
-## Windows 安装
+## Windows
 
 Windows 分为两个版本，一个是`安装包`版本还有一个是`免安装`版本，大家可以根据自己的喜好进行选择。
 
 > 免安装版本文件名为：`Gopeed-v1.x.x-windows-amd64-portable.zip`
 
-## Macos 安装
+## Macos
 
 Macos 版本提供了`.dmg`文件，双击即可安装，安装包支持`intel`和`apple silicon`两种架构。
 
-## Linux 安装
+> 注：macos 版本运行如果提示损坏，请在终端执行 `xattr -d com.apple.quarantine /Applications/Gopeed.app` 命令
+
+## Linux
 
 Linux 目前只提供了`.deb`安装包，如果你有其它 Linux 发行版的需求，可以去提 issue 寻求帮助，或者自行编译。
 
-## Android 安装
+## Android
 
 Android 版本提供了`.apk`文件，可以直接下载安装，支持所有的 CPU 架构。
 
-## iOS 安装
+## iOS
 
 目前 iOS 平台只提供了`.ipa`文件，需要自行签名安装，推荐使用[TrollStore(巨魔商店)](https://github.com/opa334/TrollStore)进行安装。
 
@@ -33,7 +35,7 @@ Android 版本提供了`.apk`文件，可以直接下载安装，支持所有的
 >
 > 因为没钱！项目纯为爱发电，如果能得到足够的赞助，会立刻上架到 TestFlight，所以请多多支持，开源不易，感谢！
 
-## Web 安装
+## Web
 
 如果你需要一个远程下载服务，那么可以考虑使用 Web 版本，Gopeed 提供了各个平台的 Web 版本，你可以根据自己的系统和 cpu 架构进行下载。
 
@@ -93,7 +95,7 @@ Usage of C:\Users\liwei\Downloads\gopeed-web-v1.3.13-windows-amd64\gopeed.exe:
 
 > 注：如果你是在公网 ip 上进行部署，建议启用身份认证，否则会有安全风险。
 
-## Docker 安装
+## Docker
 
 直接一行命令即可运行：
 
@@ -119,7 +121,7 @@ docker run --name gopeed -d -p 9999:9999 -v /path/to/download:/root/Downloads -v
 docker run --name gopeed -d -p 9999:9999 -v /path/to/download:/root/Downloads -v /path/to/storage:/app/storage liwei2633/gopeed -u admin -p 123456
 ```
 
-## 命令行安装
+## 命令行
 
 命令行版本需要依赖`Golang`环境，如果你没有安装`Golang`环境，可以参考[这里](https://golang.org/doc/install)进行安装。
 

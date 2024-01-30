@@ -3,25 +3,27 @@
 1. Go to the official website to download, which will automatically select the corresponding version according to your operating system.
 2. Go to GitHub to download, and you can choose the corresponding version to download by yourself.
 
-## Windows Installation
+## Windows
 
 Windows has two distributions, one is a portable version, and the other is an installer version. The portable version does not need to be installed, just unzip it and run it. The installer version needs to be installed, and the installation process is the same as other software.
 
 > The file name of the portable version is: Gopeed-v1.x.x-windows-amd64-portable.zip
 
-## Macos Installation
+## Macos
 
 The Macos version provides a .dmg file, which can be installed by double-clicking. The installation package supports two architectures: intel and apple silicon.
 
-## Linux Installation
+> Tips: If the macos open failed, please execute the `xattr -d com.apple.quarantine /Applications/Gopeed.app` command in the terminal
+
+## Linux
 
 Currently, only the `.deb` installation package is provided for Linux. If you have other Linux distribution requirements, you can go to the issue for help, or compile it yourself.
 
-## Android Installation
+## Android
 
 The Android version provides a `.apk` file, which can be downloaded and installed directly, and supports all CPU architectures.
 
-## iOS Installation
+## iOS
 
 Currently, only the `.ipa` file is provided for the iOS platform, which needs to be signed and installed by itself. It is recommended to use [TrollStore](https://github.com/opa334/TrollStore) for installation.
 
@@ -33,7 +35,7 @@ Currently, only the `.ipa` file is provided for the iOS platform, which needs to
 >
 > Because there is no money! The project is purely for love and power generation. If enough sponsorship can be obtained, it will be listed on TestFlight immediately. So please support us more. Open source is not easy. Thank you!
 
-## Web Installation
+## Web
 
 If you need a remote download service, you can consider using the Web version. Gopeed provides Web versions for various platforms. You can download them according to your system and CPU architecture.
 
@@ -93,7 +95,7 @@ It also supports configuration through configuration files. Create a `config.jso
 
 > Note: If you are deploying on a public IP, it is recommended to enable identity authentication, otherwise there will be security risks.
 
-## Docker Installation
+## Docker
 
 One line of command:
 
@@ -119,7 +121,7 @@ If you need to enable identity authentication, you can pass command line paramet
 docker run --name gopeed -d -p 9999:9999 -v /path/to/download:/root/Downloads -v /path/to/storage:/app/storage liwei2633/gopeed -u admin -p 123456
 ```
 
-## Command Line Installation
+## Command Line
 
 The command line version depends on the `Golang` environment. If you do not have the `Golang` environment installed, you can refer to [here](https://golang.org/doc/install) for installation.
 
