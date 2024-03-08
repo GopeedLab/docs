@@ -1,6 +1,6 @@
 # Extension Development
 
-Gopeed supports extension development using `Javascript`. Extensions can enhance Gopeed's functionality, such as downloading videos or music from a website. You can quickly learn more about it through the [official examples](https://github.com/GopeedLab/gopeed-extension-samples/blob/main/README_zh-CN.md).
+Gopeed supports extension development using `JavaScript`. Extensions can enhance Gopeed's functionality, such as downloading videos or music from a website. You can quickly learn more about it through the [official examples](https://github.com/GopeedLab/gopeed-extension-samples/blob/main/README_zh-CN.md).
 
 Gopeed extensions are based on `git` to achieve decentralized extension management. As long as the extension source code is hosted in a remote git repository, it can be installed and updated through Gopeed. Therefore, whether it is `github`, `gitee`, `gitlab`, or other git hosting platforms, they can all be used as extension repositories.
 
