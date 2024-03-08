@@ -1,6 +1,6 @@
 # 扩展开发
 
-Gopeed 支持使用`Javascript`进行扩展开发，扩展可以增强 Gopeed 的功能，比如下载某个网站的视频，或者下载某个网站的音乐等等，可以通过[官方示例](https://github.com/GopeedLab/gopeed-extension-samples/blob/main/README_zh-CN.md)快速了解一下。
+Gopeed 支持使用`JavaScript`进行扩展开发，扩展可以增强 Gopeed 的功能，比如下载某个网站的视频，或者下载某个网站的音乐等等，可以通过[官方示例](https://github.com/GopeedLab/gopeed-extension-samples/blob/main/README_zh-CN.md)快速了解一下。
 
 Gopeed 扩展基于`git`来实现去中心化的扩展管理，只要将扩展源码托管到远程 git 仓库中，就可以通过 Gopeed 进行安装和更新，所以无论是`github`、`gitee`、`gitlab`还是其它 git 托管平台，都可以作为扩展的托管仓库。
 
