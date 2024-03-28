@@ -160,6 +160,69 @@ export default defineConfig({
       },
     },
   },
+  zh-TW: {
+       label: "正體中文",
+       lang: "zh-TW",
+       title: "Gopeed 文件",
+       description: "Gopeed 文件網站",
+       themeConfig: {
+         socialLinks: [
+           { icon: "github", link: "https://github.com/GopeedLab/gopeed" },
+           { icon: "discord", link: "https://discord.gg/ZUJqJrwCGB" },
+         ],
+         nav: [
+           {
+             text: "指南",
+             link: "/zh-tw/index.md",
+           },
+           {
+             text: "開發",
+             link: "/zh-tw/dev.md",
+           },
+           {
+             text: "RESTFul API",
+             link: "https://docs.gopeed.com/site/openapi/index.html",
+           },
+           {
+             text: "SDK Reference",
+             link: "https://docs.gopeed.com/site/reference/index.html",
+           },
+           {
+             text: "捐贈",
+             link: "/donate.md",
+           },
+         ],
+         sidebar: [
+           {
+             text: "指南",
+             items: [
+               {
+                 text: "介紹",
+                 link: "/zh-tw/index.md",
+               },
+               {
+                 text: "安裝",
+                 link: "/zh-tw/install.md",
+               },
+             ],
+           },
+           {
+             text: "開發",
+             items: [
+               {
+                 text: "API 對接",
+                 link: "/zh-tw/dev-api.md",
+               },
+               {
+                 text: "擴充開發",
+                 link: "/zh-tw/dev-extension.md",
+               },
+             ],
+           },
+         ],
+       },
+     },
+   },
   themeConfig: {
     logo: "/images/logo.png",
     logoLink: "https://gopeed.com",
