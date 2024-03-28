@@ -1,5 +1,5 @@
 # 介紹
-*主要由Google Translate翻譯，根據[4124e25](https://github.com/GopeedLab/docs/commit/4124e256b0ba76c6cf6c675f46d0f162000fc096)翻譯<br>
+*主要由Google Translate翻譯，對照[90d43b0](https://github.com/GopeedLab/docs/commit/90d43b0abe0d043e0b55212c430f7aeb7313963f)翻譯<br>
 Gopeed（全名為Go Speed），直譯過來中文名叫做`夠快下載器`（不是狗屁下載器！），是一款由`Golang` + `Flutter` 開發的高速下載器，支援（HTTP、BitTorrent、Magnet ）協定下載，並且支援所有平台使用，支援的平台有：
 
 - [x] **Windows**

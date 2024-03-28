@@ -17,7 +17,19 @@ Macos 版本提供了`.dmg`文件，雙擊即可安裝，安裝套件支援`inte
 
 ## Linux
 
-Linux 目前只提供了`.deb`安裝包，如果你有其它 Linux 發行版的需求，可以去提 issue 尋求幫助，或者自行編譯。
+- Flatpak
+
+   ```sh
+   flatpak install flathub com.gopeed.Gopeed
+   ```
+
+- Snap
+
+   ```sh
+   sudo snap install gopeed
+   ```
+
+除此之外，還提供了`.deb`和`.AppImage`兩種安裝包，可以自行選擇下載安裝。
 
 ## Android
 
