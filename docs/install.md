@@ -17,7 +17,21 @@ The Macos version provides a .dmg file, which can be installed by double-clickin
 
 ## Linux
 
-Currently, only the `.deb` installation package is provided for Linux. If you have other Linux distribution requirements, you can go to the issue for help, or compile it yourself.
+## Linux
+
+- Flatpak
+
+  ```sh
+  flatpak install flathub com.gopeed.Gopeed
+  ```
+
+- Snap
+
+  ```sh
+  sudo snap install gopeed
+  ```
+
+Beyond that, there are also `.deb` and `.AppImage` installation packages, which can be downloaded and installed as needed.
 
 ## Android
 
