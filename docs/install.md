@@ -80,7 +80,7 @@ The Web version supports configuration through command line parameters or config
 
 ```sh
 $ ./gopeed.exe -h
-Usage of C:\Users\liwei\Downloads\gopeed-web-v1.3.13-windows-amd64\gopeed.exe:
+Usage of C:\Users\levi\Downloads\gopeed-web-v1.3.13-windows-amd64\gopeed.exe:
   -A string
         Bind Address (default "0.0.0.0")
   -P int
@@ -89,6 +89,8 @@ Usage of C:\Users\liwei\Downloads\gopeed-web-v1.3.13-windows-amd64\gopeed.exe:
         API token, that can only be used when basic authentication is enabled.
   -c string
         Config file path (default "./config.json")
+  -d string
+        Storage directory
   -p string
         HTTP Basic Auth Password
   -u string
@@ -103,7 +105,8 @@ It also supports configuration through configuration files. Create a `config.jso
   "port": 0, // Bind port (default 9999)
   "username": "", // HTTP Basic Auth Username (default "gopeed")
   "password": "", // HTTP Basic Auth Password
-  "token": "" // HTTP API token, it must be configured when using HTTP API in the case of enabling identity authentication
+  "token": "", // HTTP API token, it must be configured when using HTTP API in the case of enabling identity authentication
+  "storageDir": "" // Storage directory
 }
 ```
 
@@ -120,19 +123,19 @@ docker run --name gopeed -d -p 9999:9999 liwei2633/gopeed
 Mount the download directory
 
 ```sh
-docker run --name gopeed -d -p 9999:9999 -v /path/to/download:/root/Downloads liwei2633/gopeed
+docker run --name gopeed -d -p 9999:9999 -v /path/to/download:/app/Downloads liwei2633/gopeed
 ```
 
 Mount the data directory
 
 ```sh
-docker run --name gopeed -d -p 9999:9999 -v /path/to/download:/root/Downloads -v /path/to/storage:/app/storage liwei2633/gopeed
+docker run --name gopeed -d -p 9999:9999 -v /path/to/download:/app/Downloads -v /path/to/storage:/app/storage liwei2633/gopeed
 ```
 
 If you need to enable identity authentication, you can pass command line parameters (refer to the previous section `Web Configuration`):
 
 ```sh
-docker run --name gopeed -d -p 9999:9999 -v /path/to/download:/root/Downloads -v /path/to/storage:/app/storage liwei2633/gopeed -u admin -p 123456
+docker run --name gopeed -d -p 9999:9999 -v /path/to/download:/app/Downloads -v /path/to/storage:/app/storage liwei2633/gopeed -u admin -p 123456
 ```
 
 ## Command Line

@@ -78,7 +78,7 @@ Web 版支援命令列參數或設定檔進行配置，命令列參數可以透�
 
 ```sh
 $ ./gopeed.exe -h
-Usage of C:\Users\liwei\Downloads\gopeed-web-v1.3.13-windows-amd64\gopeed.exe:
+Usage of C:\Users\levi\Downloads\gopeed-web-v1.3.13-windows-amd64\gopeed.exe:
    -A string
          Bind Address (default "0.0.0.0")
    -P int
@@ -87,6 +87,8 @@ Usage of C:\Users\liwei\Downloads\gopeed-web-v1.3.13-windows-amd64\gopeed.exe:
          API token, that can only be used when basic authentication is enabled.
    -c string
          Config file path (default "./config.json")
+   -d string
+         Storage directory
    -p string
          HTTP Basic Auth Password
    -u string
@@ -101,7 +103,8 @@ Usage of C:\Users\liwei\Downloads\gopeed-web-v1.3.13-windows-amd64\gopeed.exe:
    "port": 0, // 綁定的連接埠（預設：9999)
    "username": "", // 服務身分認證使用者名，為空時不啟用身分認證
    "password": "", // 服務認證密碼（預設：gopeed)
-   "token": "" // HTTP API 令牌，在啟用身分認證的情況下使用 HTTP API 時，必須設定令牌
+   "token": "", // HTTP API 令牌，在啟用身分認證的情況下使用 HTTP API 時，必須設定令牌
+   "storageDir": "" // 存储目錄
 }
 ```
 
@@ -118,19 +121,19 @@ docker run --name gopeed -d -p 9999:9999 liwei2633/gopeed
 掛載下載目錄
 
 ```sh
-docker run --name gopeed -d -p 9999:9999 -v /path/to/download:/root/Downloads liwei2633/gopeed
+docker run --name gopeed -d -p 9999:9999 -v /path/to/download:/app/Downloads liwei2633/gopeed
 ```
 
 掛載資料目錄
 
 ```sh
-docker run --name gopeed -d -p 9999:9999 -v /path/to/download:/root/Downloads -v /path/to/storage:/app/storage liwei2633/gopeed
+docker run --name gopeed -d -p 9999:9999 -v /path/to/download:/app/Downloads -v /path/to/storage:/app/storage liwei2633/gopeed
 ```
 
 如果需要啟用身份認證，可以傳遞命令列參數(參考上一節`Web 設定`)：
 
 ```sh
-docker run --name gopeed -d -p 9999:9999 -v /path/to/download:/root/Downloads -v /path/to/storage:/app/storage liwei2633/gopeed -u admin -p 123456
+docker run --name gopeed -d -p 9999:9999 -v /path/to/download:/app/Downloads -v /path/to/storage:/app/storage liwei2633/gopeed -u admin -p 123456
 ```
 
 ## 命令列
