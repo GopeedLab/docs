@@ -188,7 +188,7 @@ export default defineConfig({
           },
           {
             text: "捐贈",
-            link: "/donate.md",
+            link: "/zh-tw/donate.md",
           },
         ],
         sidebar: [
