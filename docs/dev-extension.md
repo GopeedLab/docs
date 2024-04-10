@@ -217,7 +217,7 @@ Next, let's introduce the meaning of each field one by one:
 
 In short, it is necessary to parse the list of files that need to be downloaded based on the request information in `ctx.req` in the `onResolve` callback function and assign it to `ctx.res`. The script above is easy to understand. It parses an `index.html` file and its corresponding download address, and then assigns it to `ctx.res`.
 
-> About `ctx`'s detailed explanation can be found in [documentation](https://docs.gopeed.com/site/reference/interfaces/gopeed.types.OnResovleContext.html).
+> About `ctx`'s detailed explanation can be found in [documentation](https://docs.gopeed.com/site/reference/interfaces/gopeed.OnResovleContext.html).
 
 ## Extension settings
 
@@ -297,7 +297,7 @@ gopeed.events.onResolve((ctx) => {
 });
 ```
 
-> Note: For detailed API, please refer to [documentation](https://docs.gopeed.com/site/reference/interfaces/gopeed.types.Storage.html).
+> Note: For detailed API, please refer to [documentation](https://docs.gopeed.com/site/reference/interfaces/gopeed.Storage.html).
 
 ## Extension debugging
 

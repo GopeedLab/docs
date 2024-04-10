@@ -198,7 +198,7 @@ gopeed.events.onResolve((ctx) => {
 
 簡而言之就是需要在`onResolve`回調函數中，根據`ctx.req`裡的請求信息，解析出需要下載的文件列表賦值給`ctx.res`即可，那麼上面的腳本就很好理解 了，就是解析出一個`index.html`檔案和對應的下載位址，然後賦值給`ctx.res`。
 
-> 關於`ctx`的詳細說明可以參考[文件](https://docs.gopeed.com/site/reference/interfaces/gopeed.types.OnResovleContext.html)。
+> 關於`ctx`的詳細說明可以參考[文件](https://docs.gopeed.com/site/reference/interfaces/gopeed.OnResovleContext.html)。
 
 ## 擴充設定
 
@@ -278,7 +278,7 @@ gopeed.events.onResolve((ctx) => {
 });
 ```
 
-> 附註：詳細的 API 可以參考[文件](https://docs.gopeed.com/site/reference/interfaces/gopeed.types.Storage.html)。
+> 附註：詳細的 API 可以參考[文件](https://docs.gopeed.com/site/reference/interfaces/gopeed.Storage.html)。
 
 ## 擴充調試
 
