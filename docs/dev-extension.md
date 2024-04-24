@@ -213,7 +213,6 @@ Next, let's introduce the meaning of each field one by one:
 - `ctx`: Event context, which contains some information about the current event. In the `onResolve` event, `ctx` contains the following fields:
   - `req`: Request information, including the url and headers of the resource.
   - `res`: Response information, the script needs to assign the parsed file list to `ctx.res`, and Gopeed will download according to the file list returned in it.
-  - `settings`: Extension settings, including user-defined settings.
 
 In short, it is necessary to parse the list of files that need to be downloaded based on the request information in `ctx.req` in the `onResolve` callback function and assign it to `ctx.res`. The script above is easy to understand. It parses an `index.html` file and its corresponding download address, and then assigns it to `ctx.res`.
 

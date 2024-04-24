@@ -194,7 +194,6 @@ gopeed.events.onResolve((ctx) => {
 - `ctx`：事件上下文，包含了當前事件的一些信息，在`onResolve`事件中，`ctx`包含了以下字段：
    - `req`：請求訊息，包含了資源的 url、headers 等等。
    - `res`：回應訊息，腳本需要將解析出的檔案清單賦值給`ctx.res`，Gopeed 會根據裡面傳回的檔案清單進行下載。
-   - `settings`：擴充設定項，包含了使用者自訂的設定項。
 
 簡而言之就是需要在`onResolve`回調函數中，根據`ctx.req`裡的請求信息，解析出需要下載的文件列表賦值給`ctx.res`即可，那麼上面的腳本就很好理解 了，就是解析出一個`index.html`檔案和對應的下載位址，然後賦值給`ctx.res`。
 
