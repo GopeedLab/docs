@@ -17,8 +17,6 @@ The Macos version provides a .dmg file, which can be installed by double-clickin
 
 ## Linux
 
-## Linux
-
 - Flatpak
 
   ```sh
