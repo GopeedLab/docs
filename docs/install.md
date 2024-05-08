@@ -41,7 +41,7 @@ Currently, only the `.ipa` file is provided for the iOS platform, which needs to
 
 > Why is it not listed on the App Store?
 >
-> Because of Apple's review mechanism, BitTorrent protocol-related apps are not allowed to be listed.。
+> Because of Apple's review mechanism, BitTorrent protocol-related apps are not allowed to be listed.
 >
 > Why is it not listed on TestFlight?
 >
