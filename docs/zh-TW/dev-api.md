@@ -41,6 +41,17 @@ import { Client } 從 "@gopeed/rest";
 
 更多使用方法請參考 [文件](https://docs.gopeed.com/site/reference/classes/_gopeed_rest.Client.html)。
 
+## 使用 Python SDK
+
+來自社區用戶 [@tick97115115](https://github.com/tick97115115) 提供的 Python SDK。
+
+```bash
+pip install gospeed_api
+```
+
+Github：https://github.com/tick97115115/gospeed_api
+範例：https://github.com/tick97115115/gospeed_api/blob/main/tests/test_index.py
+
 ## 使用 HTTP 請求
 
 當然也可以直接透過 HTTP 請求來呼叫 API，具體請參考 [介面文件](https://docs.gopeed.com/site/openapi/index.html)。

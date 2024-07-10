@@ -41,6 +41,17 @@ import { Client } from "@gopeed/rest";
 
 More usages please refer to [documentation](https://docs.gopeed.com/site/reference/classes/_gopeed_rest.Client.html).
 
+## Using Python SDK
+
+A Python SDK provided by community user [@tick97115115](https://github.com/tick97115115).
+
+```bash
+pip install gospeed_api
+```
+
+Github：https://github.com/tick97115115/gospeed_api
+Example：https://github.com/tick97115115/gospeed_api/blob/main/tests/test_index.py
+
 ## Using HTTP API
 
 Of course, you can also directly call the API through HTTP requests. For details, please refer to the [API documentation](https://docs.gopeed.com/site/openapi/index.html).
