@@ -49,8 +49,8 @@ A Python SDK provided by community user [@tick97115115](https://github.com/tick9
 pip install gospeed_api
 ```
 
-Github：https://github.com/tick97115115/gospeed_api
-Example：https://github.com/tick97115115/gospeed_api/blob/main/tests/test_index.py
+- Github：https://github.com/tick97115115/gospeed_api
+- Example：https://github.com/tick97115115/gospeed_api/blob/main/tests/test_index.py
 
 ## Using HTTP API
 

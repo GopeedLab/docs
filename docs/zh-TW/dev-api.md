@@ -49,8 +49,8 @@ import { Client } 從 "@gopeed/rest";
 pip install gospeed_api
 ```
 
-Github：https://github.com/tick97115115/gospeed_api
-範例：https://github.com/tick97115115/gospeed_api/blob/main/tests/test_index.py
+- Github：https://github.com/tick97115115/gospeed_api
+- 範例：https://github.com/tick97115115/gospeed_api/blob/main/tests/test_index.py
 
 ## 使用 HTTP 請求
 
