@@ -50,7 +50,7 @@ Here is a comparison with popular downloaders on the market, which shows the adv
 | Open source            | ✔️     | ✔️                          | ❌                |
 | Non-Electron           | ✔️     | ❌                          | ✔️                |
 | Open API               | ✔️     | ✔️                          | ❌                |
-| Extension support      | ✔️     | ❌                          | ❌                |
+| Extension support      | ✔️     | ❌                          | ✔️                |
 
 Of course, Gopeed may also have many shortcomings, but we will continue to improve it.
 
