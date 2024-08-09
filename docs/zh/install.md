@@ -103,7 +103,7 @@ Usage of C:\Users\levi\Downloads\gopeed-web-v1.3.13-windows-amd64\gopeed.exe:
   "port": 0, // 绑定的端口（默认：9999)
   "username": "", // 服务身份认证用户名，为空时不启用身份认证
   "password": "", // 服务身份认证密码（默认：gopeed)
-  "token": "", // HTTP API 令牌，在启用身份认证的情况下使用 HTTP API 时，必须配置令牌
+  "apiToken": "", // HTTP API 令牌，在启用身份认证的情况下使用 HTTP API 时，必须配置令牌
   "storageDir": "" // 存储目录
 }
 ```

@@ -103,7 +103,7 @@ It also supports configuration through configuration files. Create a `config.jso
   "port": 0, // Bind port (default 9999)
   "username": "", // HTTP Basic Auth Username (default "gopeed")
   "password": "", // HTTP Basic Auth Password
-  "token": "", // HTTP API token, it must be configured when using HTTP API in the case of enabling identity authentication
+  "apiToken": "", // HTTP API token, it must be configured when using HTTP API in the case of enabling identity authentication
   "storageDir": "" // Storage directory
 }
 ```
