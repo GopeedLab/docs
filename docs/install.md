@@ -103,12 +103,26 @@ It also supports configuration through configuration files. Create a `config.jso
   "port": 0, // Bind port (default 9999)
   "username": "", // HTTP Basic Auth Username (default "gopeed")
   "password": "", // HTTP Basic Auth Password
-  "apiToken": "", // HTTP API token, it must be configured when using HTTP API in the case of enabling identity authentication
+  "apiToken": "", // HTTP API token, it must be configured when using HTTP API in the case of enabling basic authentication
   "storageDir": "" // Storage directory
 }
 ```
 
 > Note: If you are deploying on a public IP, it is recommended to enable identity authentication, otherwise there will be security risks.
+
+#### Default Download Configuration
+
+If you need to set the default download configuration when the server starts for the first time, you can add the `downloadConfig` field in `config.json`. For configuration details, please refer to [DownloaderStoreConfig](https://pkg.go.dev/github.com/GopeedLab/gopeed/pkg/base#DownloaderStoreConfig). Here is an example:
+
+```json
+{
+  "address": "127.0.0.1",
+  "port": 9999,
+  "downloadConfig": {
+    "downloadDir": "d:/test"  // Set the default download directory
+  }
+}
+```
 
 ## Docker
 

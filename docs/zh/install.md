@@ -110,6 +110,20 @@ Usage of C:\Users\levi\Downloads\gopeed-web-v1.3.13-windows-amd64\gopeed.exe:
 
 > 注：如果你是在公网 ip 上进行部署，建议启用身份认证，否则会有安全风险。
 
+#### 默认下载配置
+
+如果需要在服务器首次启动的时候设置默认下载配置，可以在`config.json`中添加`downloadConfig`字段，配置详情参考：[DownloaderStoreConfig](https://pkg.go.dev/github.com/GopeedLab/gopeed/pkg/base#DownloaderStoreConfig)，示例：
+
+```json
+{
+  "address": "127.0.0.1",
+  "port": 9999,
+  "downloadConfig": {
+    "downloadDir": "d:/test"  // 设置默认下载目录
+  }
+}
+```
+
 ## Docker
 
 直接一行命令即可运行：
