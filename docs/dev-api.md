@@ -8,7 +8,11 @@ First, you need to set the communication protocol to TCP. Go to **Settings -> Ad
 
 ![](/images/dev/set-port.png)
 
-After that, you can access the API through `http://127.0.0.1:6666`. For security reasons, it is recommended to set a token. Go to **Settings -> Advanced -> API Token** and set a token as shown in the figure below:
+::: info
+You can set any `port`, but be careful not to use ports that are already in use or reserved by the system, as this may cause access failures.
+:::
+
+After that, you can access the API through `http://127.0.0.1:9999`. For security reasons, it is recommended to set a token. Go to **Settings -> Advanced -> API Token** and set a token as shown in the figure below:
 
 ![](/images/dev/set-token.png)
 
