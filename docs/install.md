@@ -104,7 +104,8 @@ It also supports configuration through configuration files. Create a `config.jso
   "username": "", // HTTP Basic Auth Username (default "gopeed")
   "password": "", // HTTP Basic Auth Password
   "apiToken": "", // HTTP API token, it must be configured when using HTTP API in the case of enabling basic authentication
-  "storageDir": "" // Storage directory
+  "storageDir": "", // Storage directory
+  "whiteDownloadDirs": ["/root/downloads", "/root/dir/*", "/root/dir?abc"] // Download directory whitelist, when this option is configured, all tasks downloaded to non-whitelisted folders will fail, support wildcard, rules refer to https://pkg.go.dev/path/filepath#Match
 }
 ```
 
@@ -119,7 +120,7 @@ If you need to set the default download configuration when the server starts for
   "address": "127.0.0.1",
   "port": 9999,
   "downloadConfig": {
-    "downloadDir": "d:/test"  // Set the default download directory
+    "downloadDir": "d:/test" // Set the default download directory
   }
 }
 ```

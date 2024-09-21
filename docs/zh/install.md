@@ -104,11 +104,12 @@ Usage of C:\Users\levi\Downloads\gopeed-web-v1.3.13-windows-amd64\gopeed.exe:
   "username": "", // 服务身份认证用户名，为空时不启用身份认证
   "password": "", // 服务身份认证密码（默认：gopeed)
   "apiToken": "", // HTTP API 令牌，在启用身份认证的情况下使用 HTTP API 时，必须配置令牌
-  "storageDir": "" // 存储目录
+  "storageDir": "", // 存储目录
+  "whiteDownloadDirs": ["/root/downloads", "/root/dir/*", "/root/dir?abc"] // 下载目录白名单，当配置了此选项时，所有下载到非白名单文件夹的任务都会失败，支持通配符，规则参考 https://pkg.go.dev/path/filepath#Match
 }
 ```
 
-> 注：如果你是在公网 ip 上进行部署，建议启用身份认证，否则会有安全风险。
+> 注：如果在公网 ip 上进行部署，建议启用身份认证，否则会有安全风险。
 
 #### 默认下载配置
 
@@ -119,7 +120,7 @@ Usage of C:\Users\levi\Downloads\gopeed-web-v1.3.13-windows-amd64\gopeed.exe:
   "address": "127.0.0.1",
   "port": 9999,
   "downloadConfig": {
-    "downloadDir": "d:/test"  // 设置默认下载目录
+    "downloadDir": "d:/test" // 设置默认下载目录
   }
 }
 ```

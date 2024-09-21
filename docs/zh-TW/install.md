@@ -19,15 +19,15 @@ Macos 版本提供了`.dmg`文件，雙擊即可安裝，安裝套件支援`inte
 
 - Flatpak
 
-   ```sh
-   flatpak install flathub com.gopeed.Gopeed
-   ```
+  ```sh
+  flatpak install flathub com.gopeed.Gopeed
+  ```
 
 - Snap
 
-   ```sh
-   sudo snap install gopeed
-   ```
+  ```sh
+  sudo snap install gopeed
+  ```
 
 除此之外，還提供了`.deb`和`.AppImage`兩種安裝包，可以自行選擇下載安裝。
 
@@ -58,16 +58,16 @@ Android 版本提供了`.apk`文件，可以直接下載安裝，支援所有的
 1. 下載 Web 版本，解壓縮後會得到一個資料夾，將其放到你想要的位置。
 2. 在資料夾根目錄中開啟終端，執行`./gopeed.exe`，如果執行成功會看到下列輸出：
 
-    ```bash
+   ```bash
 
-      _______   ______   .______    _______  _______  _______
-    /  _____| /  __  \  |   _  \  |   ____||   ____||       \
-    |  |  __  |  |  |  | |  |_)  | |  |__   |  |__   |  .--.  |
-    |  | |_ | |  |  |  | |   ___/  |   __|  |   __|  |  |  |  |
-    |  |__| | |  `--'  | |  |      |  |____ |  |____ |  '--'  |
-    \______|  \______/  | _|      |_______||_______||_______/
+     _______   ______   .______    _______  _______  _______
+   /  _____| /  __  \  |   _  \  |   ____||   ____||       \
+   |  |  __  |  |  |  | |  |_)  | |  |__   |  |__   |  .--.  |
+   |  | |_ | |  |  |  | |   ___/  |   __|  |   __|  |  |  |  |
+   |  |__| | |  `--'  | |  |      |  |____ |  |____ |  '--'  |
+   \______|  \______/  | _|      |_______||_______||_______/
 
-    Server start success on http://[::]:9999
+   Server start success on http://[::]:9999
    ```
 
 3. 開啟瀏覽器，造訪`http://localhost:9999` 即可。
@@ -99,12 +99,13 @@ Usage of C:\Users\levi\Downloads\gopeed-web-v1.3.13-windows-amd64\gopeed.exe:
 
 ```json
 {
-   "address": "", // 綁定的IP位址（預設：0.0.0.0)
-   "port": 0, // 綁定的連接埠（預設：9999)
-   "username": "", // 服務身分認證使用者名，為空時不啟用身分認證
-   "password": "", // 服務認證密碼（預設：gopeed)
-   "apiToken": "", // HTTP API 令牌，在啟用身分認證的情況下使用 HTTP API 時，必須設定令牌
-   "storageDir": "" // 存储目錄
+  "address": "", // 綁定的IP位址（預設：0.0.0.0)
+  "port": 0, // 綁定的連接埠（預設：9999)
+  "username": "", // 服務身分認證使用者名，為空時不啟用身分認證
+  "password": "", // 服務認證密碼（預設：gopeed)
+  "apiToken": "", // HTTP API 令牌，在啟用身分認證的情況下使用 HTTP API 時，必須設定令牌
+  "storageDir": "", // 存储目錄
+  "whiteDownloadDirs": ["/root/downloads", "/root/dir/*", "/root/dir?abc"] // 下載目錄白名單，當配置了此選項時，所有下載到非白名單資料夾的任務都會失敗，支援通配符，規則參考 https://pkg.go.dev/path/filepath#Match
 }
 ```
 
@@ -119,7 +120,7 @@ Usage of C:\Users\levi\Downloads\gopeed-web-v1.3.13-windows-amd64\gopeed.exe:
   "address": "127.0.0.1",
   "port": 9999,
   "downloadConfig": {
-    "downloadDir": "d:/test"  // 設定預設下載目錄
+    "downloadDir": "d:/test" // 設定預設下載目錄
   }
 }
 ```
