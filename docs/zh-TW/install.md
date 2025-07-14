@@ -145,6 +145,12 @@ docker run --name gopeed -d -p 9999:9999 -v /path/to/download:/app/Downloads liw
 docker run --name gopeed -d -p 9999:9999 -v /path/to/download:/app/Downloads -v /path/to/storage:/app/storage liwei2633/gopeed
 ```
 
+指定容器群組 ID 和使用者 ID
+
+```sh
+docker run --name gopeed -e PGID=100 -e PUID=1000 liwei2633/gopeed
+```
+
 如果需要啟用身份認證，可以傳遞命令列參數(參考上一節`Web 設定`)：
 
 ```sh

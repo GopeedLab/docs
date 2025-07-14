@@ -145,6 +145,12 @@ Mount the data directory
 docker run --name gopeed -d -p 9999:9999 -v /path/to/download:/app/Downloads -v /path/to/storage:/app/storage liwei2633/gopeed
 ```
 
+Specify user ID and group ID
+
+```sh
+docker run --name gopeed -e PGID=100 -e PUID=1000 liwei2633/gopeed
+```
+
 If you need to enable identity authentication, you can pass command line parameters (refer to the previous section `Web Configuration`):
 
 ```sh

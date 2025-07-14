@@ -145,6 +145,12 @@ docker run --name gopeed -d -p 9999:9999 -v /path/to/download:/app/Downloads liw
 docker run --name gopeed -d -p 9999:9999 -v /path/to/download:/app/Downloads -v /path/to/storage:/app/storage liwei2633/gopeed
 ```
 
+指定容器 ​​ 组 ID 和用户 ID
+
+```sh
+docker run --name gopeed -e PGID=100 -e PUID=1000 liwei2633/gopeed
+```
+
 如果需要启用身份认证，可以传递命令行参数(参考上一节`Web 配置`)：
 
 ```sh
@@ -192,16 +198,15 @@ gopeed D:/Downloads/file.torrent
 gopeed magnet:?xt=urn:btih:xxxx
 ```
 
+## 宝塔面板(适用 9.2.0 及以上的版本) 部署指引
 
-## 宝塔面板(适用9.2.0及以上的版本) 部署指引
+1.安装宝塔面板，前往[宝塔面板官网](https://www.bt.cn/new/download.html)，选择正式版的脚本下载安装。
 
-1.安装宝塔面板，前往[宝塔面板官网](https://www.bt.cn/new/download.html)，选择正式版的脚本下载安装。 
+2.安装后登录宝塔面板，在左侧导航栏点击 Docker，首先进入会提示安装 Docker 服务，点击立即安装，按提示完成安装
 
-2.安装后登录宝塔面板，在左侧导航栏点击Docker，首先进入会提示安装Docker服务，点击立即安装，按提示完成安装 
-
-3.完成安装后在应用商店中找到Gopeed，点击安装，配置域名、端口等基本信息即可完成安装。 
+3.完成安装后在应用商店中找到 Gopeed，点击安装，配置域名、端口等基本信息即可完成安装。
 
 注意：
 域名为非必填，如果填写了域名则通过【网站】--> 【反向代理】来管理，填写域名后不需要勾选【允许外部访问】，否则需要勾选后才可以通过端口访问
 
-4.安装后在浏览器输入上一步设置的域名或者IP+端口即可访问。
+4.安装后在浏览器输入上一步设置的域名或者 IP+端口即可访问。
