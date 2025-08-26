@@ -9,6 +9,18 @@ Windows has two distributions, one is a portable version, and the other is an in
 
 > The file name of the portable version is: Gopeed-v1.x.x-windows-amd64-portable.zip
 
+### Firewall False Positive
+
+In the `Windows` system, some antivirus software may falsely report Gopeed's two core components: `host.exe` for browser extension communication and `updater.exe` for application updates. To ensure that the browser extension can properly intercept download tasks and the application can update automatically, please add the `Gopeed installation directory` to the whitelist of your firewall or antivirus software.
+
+::: tip Note
+
+**Secure Download**: Please ensure to download Gopeed from the [official website](https://gopeed.com) or [GitHub official repository](https://github.com/GopeedLab/gopeed/releases), avoid downloading from third-party channels to ensure software security.
+
+**About False Positives**: This may be related to the characteristics of applications compiled with Go language, and there is no perfect solution at present. We are considering migrating the project to Rust to improve this issue.
+
+:::
+
 ## Macos
 
 The Macos version provides a .dmg file, which can be installed by double-clicking. The installation package supports two architectures: intel and apple silicon.
@@ -221,3 +233,16 @@ Download a magnet link:
 ```sh
 gopeed magnet:?xt=urn:btih:xxxx
 ```
+
+## BT Panel (for version 9.2.0 and above) Deployment Guide
+
+1. Install BT Panel, go to [BT Panel Official Website](https://www.bt.cn/new/download.html), select the official version script to download and install.
+
+2. After installation, log in to the BT Panel, click Docker in the left navigation bar. First, it will prompt to install Docker service, click Install Now and complete the installation according to the prompts.
+
+3. After completing the installation, find Gopeed in the App Store, click Install, configure domain name, port and other basic information to complete the installation.
+
+Note:
+Domain name is optional. If a domain name is filled in, it will be managed through [Website] --> [Reverse Proxy]. After filling in the domain name, you don't need to check [Allow External Access], otherwise you need to check it to access through the port.
+
+4. After installation, enter the domain name or IP+port set in the previous step in the browser to access.

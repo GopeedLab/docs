@@ -9,6 +9,18 @@ Windows 分为两个版本，一个是`安装包`版本还有一个是`免安装
 
 > 免安装版本文件名为：`Gopeed-v1.x.x-windows-amd64-portable.zip`
 
+### 防火墙误报
+
+在 `Windows` 系统中，部分杀毒软件可能会误报 Gopeed 的两个核心组件：用于浏览器扩展通信的 `host.exe` 和负责应用更新的 `updater.exe`，为确保浏览器扩展能够正常拦截下载任务以及应用能够自动更新，请将`Gopeed安装目录`添加到防火墙或杀毒软件的白名单中。
+
+::: tip 注意
+
+**安全下载**：请确保从 [官网](https://gopeed.com) 或 [GitHub 官方仓库](https://github.com/GopeedLab/gopeed/releases) 下载 Gopeed，避免从第三方渠道下载以确保软件安全性。
+
+**关于误报**：这可能与 Go 语言编译的应用特性有关，目前还没有完美的解决方案。我们正在考虑将项目迁移到 Rust 以改善这一问题。
+
+:::
+
 ## Macos
 
 Macos 版本提供了`.dmg`文件，双击即可安装，安装包支持`intel`和`apple silicon`两种架构。
