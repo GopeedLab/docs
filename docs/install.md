@@ -109,7 +109,19 @@ It also supports configuration through configuration files. Create a `config.jso
 }
 ```
 
-> Note: If you are deploying on a public IP, it is recommended to enable identity authentication, otherwise there will be security risks.
+It also supports configuration through environment variables, with the rule `GOPEED_ConfigKey`, for example:
+
+```sh
+export GOPEED_ADDRESS="0.0.0.0"
+export GOPEED_PORT="9999"
+export GOPEED_USERNAME="gopeed"
+export GOPEED_PASSWORD="xxx"
+export GOPEED_API_TOKEN=""
+export GOPEED_STORAGE_DIR=""
+export GOPEED_WHITE_DOWNLOAD_DIRS="/root/downloads,/root/dir/*,/root/dir?abc"
+```
+
+> Note: If you are deploying on a public IP, please ensure to enable identity authentication, otherwise there will be security risks.
 
 #### Default Download Configuration
 
@@ -136,25 +148,37 @@ docker run --name gopeed -d -p 9999:9999 liwei2633/gopeed
 Mount the download directory
 
 ```sh
-docker run --name gopeed -d -p 9999:9999 -v /path/to/download:/app/Downloads liwei2633/gopeed
+docker run --name gopeed -d -p 9999:9999 \
+    -v /path/to/download:/app/Downloads \
+    liwei2633/gopeed
 ```
 
 Mount the data directory
 
 ```sh
-docker run --name gopeed -d -p 9999:9999 -v /path/to/download:/app/Downloads -v /path/to/storage:/app/storage liwei2633/gopeed
+docker run --name gopeed -d -p 9999:9999 \
+    -v /path/to/download:/app/Downloads \
+    -v /path/to/storage:/app/storage liwei2633/gopeed
 ```
 
-Specify user ID and group ID
+Specify container group ID and user ID
 
 ```sh
-docker run --name gopeed -e PGID=100 -e PUID=1000 liwei2633/gopeed
+docker run --name gopeed -d -p 9999:9999 \
+    -e PGID=100 \
+    -e PUID=1000 \
+    liwei2633/gopeed
 ```
 
-If you need to enable identity authentication, you can pass command line parameters (refer to the previous section `Web Configuration`):
+If you need to enable identity authentication, you can pass environment variable parameters (refer to the previous section `Web Configuration`):
 
 ```sh
-docker run --name gopeed -d -p 9999:9999 -v /path/to/download:/app/Downloads -v /path/to/storage:/app/storage liwei2633/gopeed -u admin -p 123456
+docker run --name gopeed -d -p 9999:9999 \
+    -e GOPEED_USERNAME="admin" \
+    -e GOPEED_PASSWORD="123" \
+    -v /path/to/download:/app/Downloads \
+    -v /path/to/storage:/app/storage \
+    liwei2633/gopeed
 ```
 
 ## Command Line

@@ -109,7 +109,19 @@ Usage of C:\Users\levi\Downloads\gopeed-web-v1.3.13-windows-amd64\gopeed.exe:
 }
 ```
 
-> 注：如果在公网 ip 上进行部署，建议启用身份认证，否则会有安全风险。
+另外也支持通过环境变量进行配置，规则为`GOPEED_配置key`，例如：
+
+```sh
+export GOPEED_ADDRESS="0.0.0.0"
+export GOPEED_PORT="9999"
+export GOPEED_USERNAME="gopeed"
+export GOPEED_PASSWORD="xxx"
+export GOPEED_API_TOKEN=""
+export GOPEED_STORAGE_DIR=""
+export GOPEED_WHITE_DOWNLOAD_DIRS="/root/downloads,/root/dir/*,/root/dir?abc"
+```
+
+> 注：如果在公网 ip 上进行部署，请务必启用身份认证，否则会有安全风险。
 
 #### 默认下载配置
 
@@ -136,25 +148,37 @@ docker run --name gopeed -d -p 9999:9999 liwei2633/gopeed
 挂载下载目录
 
 ```sh
-docker run --name gopeed -d -p 9999:9999 -v /path/to/download:/app/Downloads liwei2633/gopeed
+docker run --name gopeed -d -p 9999:9999 \
+    -v /path/to/download:/app/Downloads \
+    liwei2633/gopeed
 ```
 
 挂载数据目录
 
 ```sh
-docker run --name gopeed -d -p 9999:9999 -v /path/to/download:/app/Downloads -v /path/to/storage:/app/storage liwei2633/gopeed
+docker run --name gopeed -d -p 9999:9999 \
+    -v /path/to/download:/app/Downloads \
+    -v /path/to/storage:/app/storage liwei2633/gopeed
 ```
 
-指定容器 ​​ 组 ID 和用户 ID
+指定容器组 ID 和用户 ID
 
 ```sh
-docker run --name gopeed -e PGID=100 -e PUID=1000 liwei2633/gopeed
+docker run --name gopeed -d -p 9999:9999 \
+    -e PGID=100 \
+    -e PUID=1000 \
+    liwei2633/gopeed
 ```
 
-如果需要启用身份认证，可以传递命令行参数(参考上一节`Web 配置`)：
+如果需要启用身份认证，可以传递环境变量参数(参考上一节`Web 配置`)：
 
 ```sh
-docker run --name gopeed -d -p 9999:9999 -v /path/to/download:/app/Downloads -v /path/to/storage:/app/storage liwei2633/gopeed -u admin -p 123456
+docker run --name gopeed -d -p 9999:9999 \
+    -e GOPEED_USERNAME="admin" \
+    -e GOPEED_PASSWORD="123" \
+    -v /path/to/download:/app/Downloads \
+    -v /path/to/storage:/app/storage \
+    liwei2633/gopeed
 ```
 
 ## 命令行
