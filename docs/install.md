@@ -17,7 +17,7 @@ In the `Windows` system, some antivirus software may falsely report Gopeed's two
 
 **Secure Download**: Please ensure to download Gopeed from the [official website](https://gopeed.com) or [GitHub official repository](https://github.com/GopeedLab/gopeed/releases), avoid downloading from third-party channels to ensure software security.
 
-**About False Positives**: This may be related to the characteristics of applications compiled with Go language, and there is no perfect solution at present. We are considering migrating the project to Rust to improve this issue.
+**About False Positives**: This may be related to the characteristics of applications compiled with Go language, and there is currently no good solution. In the future, we will consider migrating the components to Rust development to improve this issue.
 
 :::
 
