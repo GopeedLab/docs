@@ -128,9 +128,9 @@ export GOPEED_ADDRESS="0.0.0.0"
 export GOPEED_PORT="9999"
 export GOPEED_USERNAME="gopeed"
 export GOPEED_PASSWORD="xxx"
-export GOPEED_API_TOKEN=""
-export GOPEED_STORAGE_DIR=""
-export GOPEED_WHITE_DOWNLOAD_DIRS="/root/downloads,/root/dir/*,/root/dir?abc"
+export GOPEED_APITOKEN=""
+export GOPEED_STORAGEDIR=""
+export GOPEED_WHITEDOWNLOADDIRS="/root/downloads,/root/dir/*,/root/dir?abc"
 ```
 
 > 注：如果在公网 ip 上进行部署，请务必启用身份认证，否则会有安全风险。
