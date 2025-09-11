@@ -113,9 +113,9 @@ Usage of C:\Users\levi\Downloads\gopeed-web-v1.3.13-windows-amd64\gopeed.exe:
 {
   "address": "", // 绑定的IP地址（默认：0.0.0.0)
   "port": 0, // 绑定的端口（默认：9999)
-  "username": "", // 服务身份认证用户名，为空时不启用身份认证
-  "password": "", // 服务身份认证密码（默认：gopeed)
-  "apiToken": "", // HTTP API 令牌，在启用身份认证的情况下使用 HTTP API 时，必须配置令牌
+  "username": "", // 服务身份认证用户名 （默认：gopeed)
+  "password": "", // 服务身份认证密码，配合用户名使用，若两者都为空则不启用身份认证
+  "apiToken": "", // HTTP API 令牌，在不启用身份认证的情况下使用 API 令牌鉴权时，web 界面无法访问，只能通过 API 访问
   "storageDir": "", // 存储目录
   "whiteDownloadDirs": ["/root/downloads", "/root/dir/*", "/root/dir?abc"] // 下载目录白名单，当配置了此选项时，所有下载到非白名单文件夹的任务都会失败，支持通配符，规则参考 https://pkg.go.dev/path/filepath#Match
 }
