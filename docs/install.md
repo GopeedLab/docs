@@ -24,7 +24,7 @@ In addition to downloading directly, you can also install or upgrade Gopeed thro
   scoop install extras/gopeed
   ```
 
-- [Winget](https://learn.microsoft.com/en-us/windows/package-manager/winget): Microsoft’s official package manager, deeply integrated with the Windows operating system.
+- [Winget](https://learn.microsoft.com/en-us/windows/package-manager/winget): Microsoft's official package manager, deeply integrated with the Windows operating system.
 
   ```powershell
   winget install -e --id monkeyWie.Gopeed
