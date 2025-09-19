@@ -1,33 +1,50 @@
-# Installation
+# Installation Instructions
 
-1. Go to the official website to download, which will automatically select the corresponding version according to your operating system.
-2. Go to GitHub to download, and you can choose the corresponding version to download by yourself.
+## General Installation Instructions
 
-## Windows
+The following methods work on all platforms for quickly downloading Gopeed:
 
-Windows has two distributions, one is a portable version, and the other is an installer version. The portable version does not need to be installed, just unzip it and run it. The installer version needs to be installed, and the installation process is the same as other software.
+1. Go to the [official website](https://gopeed.com) to download, which will automatically select the corresponding version according to your operating system.
+2. Go to [GitHub](https://github.com/GopeedLab/gopeed/releases) to download, and you can choose the corresponding version to download by yourself.
+
+## Platform-Specific Installation Guide
+
+### Windows
+
+Windows has two distributions, one is a portable version, and the other is an installer version. The portable version does not need to be installed, just unzip it and run it. The installer version needs to be installed, and the installation process is the same as other software. You can choose according to your own preferences.
 
 > The file name of the portable version is: Gopeed-v1.x.x-windows-amd64-portable.zip
 
-### Firewall False Positive
+In addition to downloading directly, you can also install or upgrade Gopeed through package managers:
 
-In the `Windows` system, some antivirus software may falsely report Gopeed's two core components: `host.exe` for browser extension communication and `updater.exe` for application updates. To ensure that the browser extension can properly intercept download tasks and the application can update automatically, please add the `Gopeed installation directory` to the whitelist of your firewall or antivirus software.
+- [Scoop](https://github.com/ScoopInstaller/Scoop): A community-maintained command-line package manager for Windows. It’s lightweight and flexible, doesn’t require administrator privileges to install, and makes managing and updating software easy.
+
+  ```powershell
+  scoop bucket add extras
+  scoop install extras/gopeed
+  ```
+
+- [Winget](https://learn.microsoft.com/en-us/windows/package-manager/winget): Microsoft’s official package manager, deeply integrated with the Windows operating system.
+
+  ```powershell
+  winget install -e --id monkeyWie.Gopeed
+  ```
+
+#### Firewall False Positive
+
+In the Windows system, some antivirus software may falsely report Gopeed's two core components: `host.exe` for browser extension communication and `updater.exe` for application updates. To ensure that the browser extension can properly intercept download tasks and the application can update automatically, please add the `Gopeed installation directory` to the whitelist of your firewall or antivirus software.
 
 ::: tip Note
 
-**Secure Download**: Please ensure to download Gopeed from the [official website](https://gopeed.com) or [GitHub official repository](https://github.com/GopeedLab/gopeed/releases), avoid downloading from third-party channels to ensure software security.
+**Safe Download**: Be sure to download Gopeed using the methods described in this document—either from the [official website](https://gopeed.com), the [official GitHub repository](https://github.com/GopeedLab/gopeed/releases), or through Scoop or Winget. Avoid using third-party sources to ensure the security of the software.
 
 **About False Positives**: This may be related to the characteristics of applications compiled with Go language, and there is currently no good solution. In the future, we will consider migrating the components to Rust development to improve this issue.
 
 :::
 
-## Macos
+### Linux
 
-The Macos version provides a .dmg file, which can be installed by double-clicking. The installation package supports two architectures: intel and apple silicon.
-
-> Tips: If the macos open failed, please execute the `xattr -d com.apple.quarantine /Applications/Gopeed.app` command in the terminal
-
-## Linux
+In the Linux system, we provide both `.deb` and `.AppImage` packages for installation, so you can choose whichever works best for you. In addition, you can also install quickly using the following commands:
 
 - Flatpak
 
@@ -41,13 +58,17 @@ The Macos version provides a .dmg file, which can be installed by double-clickin
   sudo snap install gopeed
   ```
 
-Beyond that, there are also `.deb` and `.AppImage` installation packages, which can be downloaded and installed as needed.
+### macOS
 
-## Android
+The macOS version provides a `.dmg` file, which can be installed by double-clicking. The installation package supports two architectures: `intel` and `apple silicon`.
+
+> Tips: If the macOS open failed, please execute the `xattr -d com.apple.quarantine /Applications/Gopeed.app` command in the terminal
+
+### Android
 
 The Android version provides a `.apk` file, which can be downloaded and installed directly, and supports all CPU architectures.
 
-## iOS
+### iOS
 
 Currently, only the `.ipa` file is provided for the iOS platform, which needs to be signed and installed by itself. It is recommended to use [TrollStore](https://github.com/opa334/TrollStore) for installation.
 
@@ -59,11 +80,11 @@ Currently, only the `.ipa` file is provided for the iOS platform, which needs to
 >
 > Because there is no money! The project is purely for love and power generation. If enough sponsorship can be obtained, it will be listed on TestFlight immediately. So please support us more. Open source is not easy. Thank you!
 
-## Web
+### Web
 
 If you need a remote download service, you can consider using the Web version. Gopeed provides Web versions for various platforms. You can download them according to your system and CPU architecture.
 
-![](/images/guide/install/web.png)
+![web](/images/guide/install/web.png)
 
 Here is an example of how to use the Web version on the Windows platform, and the usage on other platforms is similar.
 
@@ -84,7 +105,7 @@ Here is an example of how to use the Web version on the Windows platform, and th
 
 3. Open the browser and visit `http://localhost:9999`.
 
-### Web Configuration
+#### Web Configuration
 
 The Web version supports configuration through command line parameters or configuration files. Command line parameters can be viewed through `./gopeed.exe -h`:
 
@@ -149,7 +170,7 @@ If you need to set the default download configuration when the server starts for
 }
 ```
 
-## Docker
+### Docker
 
 One line of command:
 
@@ -193,7 +214,23 @@ docker run --name gopeed -d -p 9999:9999 \
     liwei2633/gopeed
 ```
 
-## Command Line
+### BT Panel (for version 9.2.0 and above) Deployment Guide
+
+1. Install BT Panel, go to [BT Panel Official Website](https://www.bt.cn/new/download.html), select the official version script to download and install.
+
+2. After installation, log in to the BT Panel, click Docker in the left navigation bar. First, it will prompt to install Docker service, click Install Now and complete the installation according to the prompts.
+
+3. After completing the installation, find Gopeed in the App Store, click Install, configure domain name, port and other basic information to complete the installation.
+
+   ::: tip Note
+
+   Domain name is optional. If a domain name is filled in, it will be managed through [Website] --> [Reverse Proxy]. After filling in the domain name, you don't need to check [Allow External Access], otherwise you need to check it to access through the port.
+
+   :::
+
+4. After installation, enter the domain name or IP+port set in the previous step in the browser to access.
+
+### Command Line
 
 The command line version depends on the `Golang` environment. If you do not have the `Golang` environment installed, you can refer to [here](https://golang.org/doc/install) for installation.
 
@@ -214,7 +251,7 @@ Usage of gopeed:
         Store directory. (default "C:\\Users\\levi")
 ```
 
-### Command Line Usage Example
+#### Command Line Usage Example
 
 Download an HTTP resource:
 
@@ -233,16 +270,3 @@ Download a magnet link:
 ```sh
 gopeed magnet:?xt=urn:btih:xxxx
 ```
-
-## BT Panel (for version 9.2.0 and above) Deployment Guide
-
-1. Install BT Panel, go to [BT Panel Official Website](https://www.bt.cn/new/download.html), select the official version script to download and install.
-
-2. After installation, log in to the BT Panel, click Docker in the left navigation bar. First, it will prompt to install Docker service, click Install Now and complete the installation according to the prompts.
-
-3. After completing the installation, find Gopeed in the App Store, click Install, configure domain name, port and other basic information to complete the installation.
-
-Note:
-Domain name is optional. If a domain name is filled in, it will be managed through [Website] --> [Reverse Proxy]. After filling in the domain name, you don't need to check [Allow External Access], otherwise you need to check it to access through the port.
-
-4. After installation, enter the domain name or IP+port set in the previous step in the browser to access.
