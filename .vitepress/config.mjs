@@ -95,6 +95,7 @@ export default defineConfig({
             ],
           },
         ],
+        outline: "deep",
       },
     },
     zh: {
@@ -157,6 +158,7 @@ export default defineConfig({
             ],
           },
         ],
+        outline: "deep",
       },
     },
     "zh-TW": {
@@ -219,6 +221,7 @@ export default defineConfig({
             ],
           },
         ],
+        outline: "deep",
       },
     },
   },
