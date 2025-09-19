@@ -174,11 +174,11 @@ export default defineConfig({
         nav: [
           {
             text: "指南",
-            link: "/zh-tw/index.md",
+            link: "/zh-TW/index.md",
           },
           {
             text: "開發",
-            link: "/zh-tw/dev.md",
+            link: "/zh-TW/dev.md",
           },
           {
             text: "RESTFul API",
@@ -190,7 +190,7 @@ export default defineConfig({
           },
           {
             text: "捐贈",
-            link: "/zh-tw/donate.md",
+            link: "/zh-TW/donate.md",
           },
         ],
         sidebar: [
@@ -199,11 +199,11 @@ export default defineConfig({
             items: [
               {
                 text: "介紹",
-                link: "/zh-tw/index.md",
+                link: "/zh-TW/index.md",
               },
               {
                 text: "安裝",
-                link: "/zh-tw/install.md",
+                link: "/zh-TW/install.md",
               },
             ],
           },
@@ -212,11 +212,11 @@ export default defineConfig({
             items: [
               {
                 text: "API 對接",
-                link: "/zh-tw/dev-api.md",
+                link: "/zh-TW/dev-api.md",
               },
               {
                 text: "擴充開發",
-                link: "/zh-tw/dev-extension.md",
+                link: "/zh-TW/dev-extension.md",
               },
             ],
           },
