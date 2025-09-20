@@ -1,33 +1,50 @@
-# 安装
+# 安装说明
+
+## 通用安装说明
+
+以下方法适用于所有平台，可快速下载 Gopeed：
 
 1. 前往 [官网](https://gopeed.com) 下载，会根据你的操作系统自动选择对应的版本进行下载。
 2. 前往 [GitHub](https://github.com/GopeedLab/gopeed/releases) 下载，可以自行选择对应的版本进行下载。
 
-## Windows
+## 平台专属安装说明
 
-Windows 分为两个版本，一个是`安装包`版本还有一个是`免安装`版本，大家可以根据自己的喜好进行选择。
+### Windows
 
-> 免安装版本文件名为：`Gopeed-v1.x.x-windows-amd64-portable.zip`
+在 Windows 平台上提供了两种发行版本，一种是 `安装版`，另一种则是 `便携版` 。便携版无需安装，解压后即可运行；安装版则需要安装，其安装过程与其他软件相同。大家可以根据自己的喜好进行选择。
 
-### 防火墙误报
+> 便携版的文件名为：`Gopeed-v1.x.x-windows-amd64-portable.zip`
 
-在 `Windows` 系统中，部分杀毒软件可能会误报 Gopeed 的两个核心组件：用于浏览器扩展通信的 `host.exe` 和负责应用更新的 `updater.exe`，为确保浏览器扩展能够正常拦截下载任务以及应用能够自动更新，请将`Gopeed安装目录`添加到防火墙或杀毒软件的白名单中。
+除了直接下載外，你还可以通过包管理器來安装或升级 Gopeed：
+
+- [Scoop](https://github.com/ScoopInstaller/Scoop)：由社区维护的 Windows 命令行包管理工具，轻量、灵活，安装过程无须管理员权限，方便管理与更新软件。
+
+  ```powershell
+  scoop bucket add extras
+  scoop install extras/gopeed
+  ```
+
+- [Winget](https://learn.microsoft.com/zh-tw/windows/package-manager/winget)：微软官方的包管理器，与 Windows 系统深度整合。
+
+  ```powershell
+  winget install -e --id monkeyWie.Gopeed
+  ```
+
+#### 防火墙误报
+
+在 `Windows` 系统中，部分杀毒软件可能会误报 Gopeed 的两个核心组件：用于浏览器扩展通信的 `host.exe` 和负责应用程序更新的 `updater.exe`，为确保浏览器扩展能够正常拦截下载任务以及应用程序能够自动更新，请将 Gopeed 的 `安装目录` 添加到防火墙或杀毒软件的白名单中。
 
 ::: tip 注意
 
-**安全下载**：请确保从 [官网](https://gopeed.com) 或 [GitHub 官方仓库](https://github.com/GopeedLab/gopeed/releases) 下载 Gopeed，避免从第三方渠道下载以确保软件安全性。
+**安全下载**：请务必按照本文档中提到的方法下载 Gopeed，例如从 [官网](https://gopeed.com) 或  [GitHub 官方仓库](https://github.com/GopeedLab/gopeed/releases) 获取，或通过 Scoop、WinGet 安装。请避免使用第三方渠道下载，以确保软件的安全性。
 
 **关于误报**：这可能与 Go 语言编译的应用特性有关，目前还没有什么好的解决方案，后续会考虑将组件迁移到 Rust 开发来改善这一问题。
 
 :::
 
-## Macos
+### Linux
 
-Macos 版本提供了`.dmg`文件，双击即可安装，安装包支持`intel`和`apple silicon`两种架构。
-
-> 注：macos 版本运行如果提示损坏，请在终端执行 `xattr -d com.apple.quarantine /Applications/Gopeed.app` 命令
-
-## Linux
+在 Linux 平台上提供了 `.deb` 和 `.AppImage` 两种安装包，可以自行选择下载安装。此外，还可以通过下列命令快速安装。
 
 - Flatpak
 
@@ -41,15 +58,19 @@ Macos 版本提供了`.dmg`文件，双击即可安装，安装包支持`intel`�
   sudo snap install gopeed
   ```
 
-除此之外，还提供了`.deb`和`.AppImage`两种安装包，可以自行选择下载安装。
+### macOS
 
-## Android
+在 macOS 平台上提供了 `.dmg` 安装包，双击即可安装，安装包支持 `intel` 和 `apple silicon` 两种架构。
 
-Android 版本提供了`.apk`文件，可以直接下载安装，支持所有的 CPU 架构。
+> 注：若在 macOS 平台运行后提示损坏，请在终端中执行 `xattr -d com.apple.quarantine /Applications/Gopeed.app` 命令
 
-## iOS
+### Android
 
-目前 iOS 平台只提供了`.ipa`文件，需要自行签名安装，推荐使用[TrollStore(巨魔商店)](https://github.com/opa334/TrollStore)进行安装。
+在 Android 平台上提供了 `.apk` 安装包，可以直接下载安装，支持所有的 CPU 架构。
+
+### iOS
+
+目前 iOS 平台只提供了 `.ipa` 文件，需要自行签名安装，推荐使用 [TrollStore (巨魔商店)](https://github.com/opa334/TrollStore) 进行安装。
 
 > 为什么没有上架到 App Store？
 >
@@ -59,16 +80,16 @@ Android 版本提供了`.apk`文件，可以直接下载安装，支持所有的
 >
 > 因为没钱！项目纯为爱发电，如果能得到足够的赞助，会立刻上架到 TestFlight，所以请多多支持，开源不易，感谢！
 
-## Web
+### Web
 
-如果你需要一个远程下载服务，那么可以考虑使用 Web 版本，Gopeed 提供了各个平台的 Web 版本，你可以根据自己的系统和 cpu 架构进行下载。
+如果你需要一个远程下载服务，那么可以考虑使用 Web 版本，Gopeed 提供了各个平台的 Web 版本，你可以根据自己的系统和 CPU 架构进行下载。
 
-![](/images/guide/install/web.png)
+![web](/images/guide/install/web.png)
 
 这里我以 Windows 平台为例，介绍一下如何使用 Web 版本，其它平台的使用方法类似。
 
-1. 下载 Web 版本，解压后会得到一个文件夹，将其放到你想要的位置。
-2. 在文件夹根目录打开终端，执行`./gopeed.exe`，如果运行成功会看到如下输出：
+1. 下载 Web 版本，解压后会得到一个文件夹，将其放到你想要存放的位置。
+2. 在文件夹根目录打开终端，执行 `./gopeed.exe`，如果运行成功会看到如下输出：
 
    ```bash
 
@@ -82,11 +103,11 @@ Android 版本提供了`.apk`文件，可以直接下载安装，支持所有的
     Server start success on http://[::]:9999
    ```
 
-3. 打开浏览器，访问`http://localhost:9999` 即可。
+3. 打开浏览器，访问 `http://localhost:9999` 即可。
 
-### Web 配置
+#### Web 配置
 
-Web 版支持命令行参数或者配置文件进行配置，命令行参数可以通过`./gopeed.exe -h`查看：
+Web 版支持命令行参数或者配置文件进行配置，命令行参数可以通过 `./gopeed.exe -h` 查看：
 
 ```sh
 $ ./gopeed.exe -h
@@ -107,21 +128,21 @@ Usage of C:\Users\levi\Downloads\gopeed-web-v1.3.13-windows-amd64\gopeed.exe:
         HTTP Basic Auth Username (default "gopeed")
 ```
 
-同时也支持通过配置文件进行配置，在根目录下创建`config.json`文件，内容如下：
+同时也支持通过配置文件进行配置，在根目录下创建 `config.json` 配置文件，内容如下：
 
 ```json
 {
-  "address": "", // 绑定的IP地址（默认：0.0.0.0)
-  "port": 0, // 绑定的端口（默认：9999)
-  "username": "", // 服务身份认证用户名 （默认：gopeed)
+  "address": "", // 绑定的 IP 地址 (默认：0.0.0.0)
+  "port": 0, // 绑定的端口 (默认：9999)
+  "username": "", // 服务身份认证用户名 (默认：gopeed)
   "password": "", // 服务身份认证密码，配合用户名使用，若两者都为空则不启用身份认证
   "apiToken": "", // HTTP API 令牌，在不启用身份认证的情况下使用 API 令牌鉴权时，web 界面无法访问，只能通过 API 访问
   "storageDir": "", // 存储目录
-  "whiteDownloadDirs": ["/root/downloads", "/root/dir/*", "/root/dir?abc"] // 下载目录白名单，当配置了此选项时，所有下载到非白名单文件夹的任务都会失败，支持通配符，规则参考 https://pkg.go.dev/path/filepath#Match
+  "whiteDownloadDirs": ["/root/downloads", "/root/dir/*", "/root/dir?abc"] // 下载目录白名单，配置此选项后，所有下载到非白名单文件夹的任务都会失败，支持通配符，规则参考 https://pkg.go.dev/path/filepath#Match
 }
 ```
 
-另外也支持通过环境变量进行配置，规则为`GOPEED_配置key`，例如：
+另外也支持通过环境变量进行配置，规则为 `GOPEED_ConfigKey`，例如：
 
 ```sh
 export GOPEED_ADDRESS="0.0.0.0"
@@ -135,9 +156,9 @@ export GOPEED_WHITEDOWNLOADDIRS="/root/downloads,/root/dir/*,/root/dir?abc"
 
 > 注：如果在公网 ip 上进行部署，请务必启用身份认证，否则会有安全风险。
 
-#### 默认下载配置
+##### 默认下载配置
 
-如果需要在服务器首次启动的时候设置默认下载配置，可以在`config.json`中添加`downloadConfig`字段，配置详情参考：[DownloaderStoreConfig](https://pkg.go.dev/github.com/GopeedLab/gopeed/pkg/base#DownloaderStoreConfig)，示例：
+如果需要在服务器首次启动的时候设置默认下载配置，可以在 `config.json` 中添加 `downloadConfig` 字段，配置详情参考： [DownloaderStoreConfig](https://pkg.go.dev/github.com/GopeedLab/gopeed/pkg/base#DownloaderStoreConfig)，示例：
 
 ```json
 {
@@ -149,9 +170,9 @@ export GOPEED_WHITEDOWNLOADDIRS="/root/downloads,/root/dir/*,/root/dir?abc"
 }
 ```
 
-## Docker
+### Docker
 
-直接一行命令即可运行：
+只需一行命令即可运行：
 
 ```sh
 docker run --name gopeed -d -p 9999:9999 liwei2633/gopeed
@@ -182,7 +203,7 @@ docker run --name gopeed -d -p 9999:9999 \
     liwei2633/gopeed
 ```
 
-如果需要启用身份认证，可以传递环境变量参数(参考上一节`Web 配置`)：
+如果需要启用身份认证，可以传递环境变量参数(参考上一节 `Web 配置`)：
 
 ```sh
 docker run --name gopeed -d -p 9999:9999 \
@@ -193,9 +214,25 @@ docker run --name gopeed -d -p 9999:9999 \
     liwei2633/gopeed
 ```
 
-## 命令行
+### 宝塔面板 (适用 9.2.0 及以上的版本) 部署指引
 
-命令行版本需要依赖`Golang`环境，如果你没有安装`Golang`环境，可以参考[这里](https://golang.org/doc/install)进行安装。
+1. 安装宝塔面板，前往 [宝塔面板官网](https://www.bt.cn/new/download.html)，选择正式版的脚本下载安装。
+
+2. 安装后登录宝塔面板，在左侧导航栏点击 Docker，首先进入会提示安装 Docker 服务，点击立即安装，按提示完成安装
+
+3. 完成安装后在应用商店中找到 Gopeed，点击安装，配置域名、端口等基本信息即可完成安装。
+
+   ::: tip 注意
+
+   域名为非必填，如果填写了域名则需通过「网站」 --> 「反向代理」来管理，填写域名后不需要勾选「允许外部访问」，否则需要勾选后才可以通过端口访问。
+
+   :::
+
+4. 安装后在浏览器输入上一步设置的域名或者 IP + 端口即可访问。
+
+### 命令行
+
+命令行版本需要依赖 `Golang` 环境，如果你没有安装 `Golang` 环境，可以参考 [这里](https://golang.org/doc/install) 进行安装。
 
 安装命令：
 
@@ -203,7 +240,7 @@ docker run --name gopeed -d -p 9999:9999 \
 go install github.com/GopeedLab/gopeed/cmd/gopeed@latest
 ```
 
-安装完成就可以使用`gopeed`命令进行下载了，具体使用方法可以通过`gopeed -h`查看：
+安装完成便可以使用 `gopeed` 命令进行下载了，具体使用方法可以通过 `gopeed -h` 查看：
 
 ```sh
 $ gopeed -h
@@ -214,7 +251,7 @@ Usage of gopeed:
         Store directory. (default "C:\\Users\\levi")
 ```
 
-### 命令行使用示例
+#### 命令行使用示例
 
 下载一个 HTTP 资源：
 
@@ -233,16 +270,3 @@ gopeed D:/Downloads/file.torrent
 ```sh
 gopeed magnet:?xt=urn:btih:xxxx
 ```
-
-## 宝塔面板(适用 9.2.0 及以上的版本) 部署指引
-
-1.安装宝塔面板，前往[宝塔面板官网](https://www.bt.cn/new/download.html)，选择正式版的脚本下载安装。
-
-2.安装后登录宝塔面板，在左侧导航栏点击 Docker，首先进入会提示安装 Docker 服务，点击立即安装，按提示完成安装
-
-3.完成安装后在应用商店中找到 Gopeed，点击安装，配置域名、端口等基本信息即可完成安装。
-
-注意：
-域名为非必填，如果填写了域名则通过【网站】--> 【反向代理】来管理，填写域名后不需要勾选【允许外部访问】，否则需要勾选后才可以通过端口访问
-
-4.安装后在浏览器输入上一步设置的域名或者 IP+端口即可访问。
