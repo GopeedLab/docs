@@ -1,0 +1,24 @@
+{
+  "redirects": [
+    {
+      "source": "/:lang(zh|zh-TW)/:path(.*)\\.html",
+      "destination": "https://gopeed.com/:lang/docs/:path",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(zh|zh-TW)/:path*",
+      "destination": "https://gopeed.com/:lang/docs/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path(.*)\\.html",
+      "destination": "https://gopeed.com/docs/:path",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "destination": "https://gopeed.com/docs/:path*",
+      "permanent": true
+    }
+  ]
+}
