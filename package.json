@@ -1,23 +1,18 @@
 {
-  "private": true,
-  "name": "gopeed-docs",
+  "name": "gopeed-docs-redirect",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "docs:dev": "vitepress dev",
-    "docs:build": "vitepress build",
-    "docs:preview": "vitepress preview",
-    "build": "bash ./build.sh"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "vitepress": "1.0.0-rc.20"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
   "dependencies": {
-    "markdown-it-task-lists": "^2.1.1"
+    "next": "15.5.12"
+  },
+  "devDependencies": {
+    "@types/node": "^25.3.3",
+    "@types/react": "^19.2.14",
+    "typescript": "^5.9.3"
   }
 }
